@@ -1,0 +1,15 @@
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\bin\Debug\net7.0\ConsoleApp1LavoroIf.exe
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\bin\Debug\net7.0\ConsoleApp1LavoroIf.deps.json
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\bin\Debug\net7.0\ConsoleApp1LavoroIf.runtimeconfig.json
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\bin\Debug\net7.0\ConsoleApp1LavoroIf.dll
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\bin\Debug\net7.0\ConsoleApp1LavoroIf.pdb
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.csproj.AssemblyReference.cache
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.AssemblyInfoInputs.cache
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.AssemblyInfo.cs
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.csproj.CoreCompileInputs.cache
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.dll
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\refint\ConsoleApp1LavoroIf.dll
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.pdb
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ConsoleApp1LavoroIf.genruntimeconfig.cache
+C:\Users\pietro.malzone\source\repos\ConsoleApp1LavoroIf\ConsoleApp1LavoroIf\obj\Debug\net7.0\ref\ConsoleApp1LavoroIf.dll
