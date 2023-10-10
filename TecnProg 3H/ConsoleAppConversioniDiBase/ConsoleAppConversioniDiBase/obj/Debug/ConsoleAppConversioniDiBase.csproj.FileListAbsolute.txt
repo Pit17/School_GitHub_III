@@ -1,0 +1,8 @@
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\obj\Debug\ConsoleAppConversioniDiBase.csproj.AssemblyReference.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\obj\Debug\ConsoleAppConversioniDiBase.csproj.SuggestedBindingRedirects.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\obj\Debug\ConsoleAppConversioniDiBase.csproj.CoreCompileInputs.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\bin\Debug\ConsoleAppConversioniDiBase.exe.config
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\bin\Debug\ConsoleAppConversioniDiBase.exe
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\bin\Debug\ConsoleAppConversioniDiBase.pdb
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\obj\Debug\ConsoleAppConversioniDiBase.exe
+C:\Users\pietro.malzone\source\repos\ConsoleAppConversioniDiBase\ConsoleAppConversioniDiBase\obj\Debug\ConsoleAppConversioniDiBase.pdb
