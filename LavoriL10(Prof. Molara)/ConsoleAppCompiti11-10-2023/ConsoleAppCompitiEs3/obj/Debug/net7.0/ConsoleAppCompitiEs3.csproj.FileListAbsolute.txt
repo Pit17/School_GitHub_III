@@ -1,0 +1,15 @@
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\bin\Debug\net7.0\ConsoleAppCompitiEs3.exe
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\bin\Debug\net7.0\ConsoleAppCompitiEs3.deps.json
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\bin\Debug\net7.0\ConsoleAppCompitiEs3.runtimeconfig.json
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\bin\Debug\net7.0\ConsoleAppCompitiEs3.dll
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\bin\Debug\net7.0\ConsoleAppCompitiEs3.pdb
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.csproj.AssemblyReference.cache
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.GeneratedMSBuildEditorConfig.editorconfig
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.AssemblyInfoInputs.cache
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.AssemblyInfo.cs
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.csproj.CoreCompileInputs.cache
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.dll
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\refint\ConsoleAppCompitiEs3.dll
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.pdb
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ConsoleAppCompitiEs3.genruntimeconfig.cache
+Z:\GitHUb\LavoriL10(Prof. Molara)\ConsoleAppCompiti11-10-2023\ConsoleAppCompitiEs3\obj\Debug\net7.0\ref\ConsoleAppCompitiEs3.dll

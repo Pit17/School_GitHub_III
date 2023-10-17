@@ -1,0 +1,8 @@
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\bin\Debug\ConsoleAppNumeriInParole.exe.config
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\bin\Debug\ConsoleAppNumeriInParole.exe
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\bin\Debug\ConsoleAppNumeriInParole.pdb
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\obj\Debug\ConsoleAppNumeriInParole.csproj.AssemblyReference.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\obj\Debug\ConsoleAppNumeriInParole.csproj.SuggestedBindingRedirects.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\obj\Debug\ConsoleAppNumeriInParole.csproj.CoreCompileInputs.cache
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\obj\Debug\ConsoleAppNumeriInParole.exe
+C:\Users\pietro.malzone\source\repos\ConsoleAppNumeriInParole\ConsoleAppNumeriInParole\obj\Debug\ConsoleAppNumeriInParole.pdb
