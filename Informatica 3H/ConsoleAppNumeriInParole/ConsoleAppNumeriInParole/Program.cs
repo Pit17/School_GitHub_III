@@ -45,10 +45,13 @@ namespace ConsoleAppNumeriInParole
             
             if (numero == 0)//caso 0
             {
+
                 numeroInLettere = "zero";
+
             }
             else // numero > di 0
             {
+
                 #region miglialia
                 switch (numero / 1000)
                 {
@@ -84,6 +87,7 @@ namespace ConsoleAppNumeriInParole
 
                 }
                 #endregion
+
                 #region centinaia
                 switch (numero / 100 % 10)
                 {
@@ -118,6 +122,7 @@ namespace ConsoleAppNumeriInParole
                         break;
                 }
                 #endregion
+
                 #region decine
                 switch (numero / 10 % 10)
                 {
@@ -178,7 +183,11 @@ namespace ConsoleAppNumeriInParole
                         numeroInLettere += "settanta";
                         break;
                     case 8:
-                        numeroInLettere = numeroInLettere.Substring(0, numeroInLettere.Length - 1);
+                        if(numero /100 %10 != 0)
+                        {
+                            numeroInLettere = numeroInLettere.Substring(0, numeroInLettere.Length - 1);
+                        }
+                        
                         numeroInLettere += "ottanta";
                         break;
                     case 9:
@@ -188,6 +197,7 @@ namespace ConsoleAppNumeriInParole
                         break;
                 }
                 #endregion
+
                 #region unità
                 if (numero / 10 % 10 != 1)
                 {
@@ -238,6 +248,7 @@ namespace ConsoleAppNumeriInParole
                     }
                 }
                 #endregion
+
             }
 
 
