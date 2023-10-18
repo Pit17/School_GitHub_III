@@ -62,6 +62,7 @@ namespace ConsoleAppEs1
 
             Console.WriteLine(intNumber);
 
+            Console.WriteLine("\nPremi un tasto per terminare il programma");
             Console.ReadKey();
         }
     }

@@ -36,7 +36,6 @@ namespace ConsoleAppEserciziMolara
             
             while( Operatore != '=' ) 
             {
-                Console.Clear();
                 Console.WriteLine($"\nIl tuo numero è {numero}");
                 Console.WriteLine("\nSe il numero pensato è maggiore inserire il simbolo >, se il numero pensato è minore inserire < se ho indovinato inserisci =");
                 Console.Write("Inserisci il simbolo --> ");
