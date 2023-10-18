@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
-//Malzone Pietro 3H 11/10/2023 ConsoleApp per convertire un intero in base 2 e 16 utilizzando il metodo illustrato in teoria
+//Malzone Pietro 3H 18/10/2023 ConsoleApp per convertire un intero in base 2 e 16 utilizzando il metodo illustrato in teoria
 namespace ConsoleAppConversioniBase2EBase16
 {
     internal class Program
@@ -12,8 +12,8 @@ namespace ConsoleAppConversioniBase2EBase16
         static void Main(string[] args)
         {
             #region nome
-            Console.Title = ("InputDatiAutoreMalzonePietro3H11/10/2023");
-            Console.WriteLine("Autore Progetto Malzone Pietro 3H 11/10/2023\n");
+            Console.Title = ("InputDatiAutoreMalzonePietro3H18/10/2023");
+            Console.WriteLine("Autore Progetto Malzone Pietro 3H 18/10/2023\n");
             #endregion
 
 
@@ -30,6 +30,11 @@ namespace ConsoleAppConversioniBase2EBase16
                 stInput = Console.ReadLine();
                 //conversione in intero
                 inputOk = int.TryParse(stInput, out varInt);
+                if (varInt < 0)
+                {
+                    Console.WriteLine("Numeri negativi non valido. Riprovi");
+                    inputOk = false;
+                }
                 if (!inputOk) Console.WriteLine("Input non valido");
 
             } while (!inputOk);//ricicla se non valido
@@ -45,17 +50,9 @@ namespace ConsoleAppConversioniBase2EBase16
 
             } while (numero > 0);
 
+
+
             numero = varInt;
-            do
-            {
-
-                risultato = (numero % 2).ToString() + risultato;
-                numero /= 2;
-
-
-            } while (numero > 0);
-
-
             do//conversione base 16
             {
                 if (numero % 16  == 10)
