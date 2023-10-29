@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppEserciziMolaraCicli2Es1", "ConsoleAppEserciziMolaraCicli2\ConsoleAppEserciziMolaraCicli2Es1.csproj", "{49DDA0CD-7053-4458-A0C8-B088A9BAFDEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppEserciziMolaraCicli2Es2", "ConsoleAppEserciziMolaraCicli2Es2\ConsoleAppEserciziMolaraCicli2Es2.csproj", "{69210AF5-958B-472D-8330-0EC1306EEDBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49DDA0CD-7053-4458-A0C8-B088A9BAFDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DDA0CD-7053-4458-A0C8-B088A9BAFDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DDA0CD-7053-4458-A0C8-B088A9BAFDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DDA0CD-7053-4458-A0C8-B088A9BAFDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69210AF5-958B-472D-8330-0EC1306EEDBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69210AF5-958B-472D-8330-0EC1306EEDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69210AF5-958B-472D-8330-0EC1306EEDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69210AF5-958B-472D-8330-0EC1306EEDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {868B07D0-1BC7-420F-8B2E-1624577BBE9D}
+	EndGlobalSection
+EndGlobal
