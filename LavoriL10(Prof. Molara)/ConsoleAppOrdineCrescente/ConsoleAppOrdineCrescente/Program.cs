@@ -7,7 +7,7 @@
 
             Console.Title = "AutorePietroMalzone3H";
             int a, b, c;
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             
                 Console.WriteLine("Inserisca il primo dato");
                 a = int.Parse(Console.ReadLine());
@@ -31,7 +31,7 @@
                 Console.WriteLine("|___|   |   |");
                 Console.WriteLine("|___|       |");
                 Console.WriteLine("|___|       |");
-                Console.WriteLine("+___________+");
+                Console.WriteLine("|___|_______+");
 
                 Console.ReadKey();
             
