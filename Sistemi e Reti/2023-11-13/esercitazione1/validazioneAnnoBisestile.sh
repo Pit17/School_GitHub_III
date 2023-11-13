@@ -12,6 +12,6 @@ else
     if (($year % 4 == 0));
         then echo "L'anno $year è bisestile"
     else
-        echo "L'anno $year è bisestile"
+        echo "L'anno $year  non è bisestile"
     fi
 fi
