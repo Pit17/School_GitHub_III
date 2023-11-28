@@ -14,6 +14,7 @@
 - The [Informatica](https://github.com/Pit17/GitHUb/tree/main/Informatica%203H/Informatica) folder contains projects written in C# during computer science lessons.
 - The [Sistemi e reti](https://github.com/Pit17/GitHUb/tree/main/Sistemi%20e%20Reti) folder contains scripts written in bash.
 - The [LavoriL10](https://github.com/Pit17/GitHUb/tree/main/LavoriL10(Prof.%20Molara)) folder contains the projects written in C# during theory hours.
+- The [TecnProg3H](https://github.com/Pit17/School_GitHub/tree/main/TecnProg%203H) folder contains projects written in C# during TPSIT lessons.
 </h4>
 
 
