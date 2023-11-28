@@ -9,6 +9,7 @@
 
 <h3 align="center">Pietro Malzone</h3>
 
+<h4 align="left">- The "Informatica" folder contains works written in C# in computer science<br>- The "Sistemi e reti" folder contains jobs written in bash.<br>- The "LavoriL10" folder contains the works written in C# during theory hours.<br></h4>
 
 
 
