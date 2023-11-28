@@ -43,18 +43,20 @@ namespace ConsoleAppTombola
             }
             while (program == true && estrazioni<=90)
             {
+                Console.WriteLine();
                 Console.WriteLine("Premere '1' per estrarre un numero");
                 Console.WriteLine("Premere '2' per verificare una cinquina");
                 Console.WriteLine("Premere '3' per verificare una decina");
                 Console.WriteLine("Premere '4' per verificare una Tombola");
-                Console.WriteLine("Premere '5' per uscire dal programma");
+                Console.WriteLine("Premere '5' per generare una schedina");
+                Console.WriteLine("Premere '6' per uscire dal programma");
                 #region acquisizione input
                 while (true)
                 {
 
                     if (int.TryParse(Console.ReadLine(), out numero))
                     {
-                        if (numero > 0 && numero < 6) break;
+                        if (numero > 0 && numero < 7) break;
                     }
                     else Console.WriteLine("Valore non valido");
                 }
@@ -112,6 +114,9 @@ namespace ConsoleAppTombola
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
                     case 5:
+                        Schedina();
+                        break;
+                    case 6:
                             program = false;
                             break;
                 }
@@ -246,7 +251,25 @@ namespace ConsoleAppTombola
             if (contatore == 15) result = true;
             return result;
         }
+        static bool Schedina()
+        {
+            
+            Random rnd = new Random();
+            int[] vector = new int[15];
+            
 
+            for (int i = 0;i < 15;i++) 
+            {
+               
+                int numero_estratto = rnd.Next(1, 91);
+                Console.Write(numero_estratto + "; ");
+
+
+            }
+
+            return true;
+
+        }
         
     }
 }
