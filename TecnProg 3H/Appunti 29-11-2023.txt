@@ -1,0 +1,6 @@
+Filtri possibile preservare alcune frequenze
+
+Filtro passa basso = fino a una certa frequenza(frequenza di taglio) vengono mantenute le frequenze (da 0 a ft) le altre vengono annullate
+Filtro passa alto = contrario filtro passa basso (da ft in avanti)
+Filtro passa banda = ci sono più frequenze ( f1, f2 ) e si tiene solo quello compreso tra f1 e f2
+Filtro elimina banda = opposto del passa banda cioè tengo tutto tranne quello compreso tra f1 e f2
