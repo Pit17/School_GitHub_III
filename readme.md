@@ -23,7 +23,7 @@ Similar Repo:
 -   [AlBovo](https://github.com/AlBovo/Compiti-Terza) <img src="https://avatars.githubusercontent.com/u/88632271?v=4" height="20" alt="AlBovo"  />
 
 
-- [AntoStarWars](https://github.com/Antostarwars/C-sharp-School) <img src="https://avatars.githubusercontent.com/u/67382924?v=4" height="20" alt="Anto" /> 
+- [Antostarwars](https://github.com/Antostarwars/C-sharp-School) <img src="https://avatars.githubusercontent.com/u/67382924?v=4" height="20" alt="Anto" /> 
 
 
 
