@@ -1,0 +1,3 @@
+Informatica = "Z:\Informatica"
+Sistemi e Reti = "Z:\Sistemi e Reti"
+TecnProg = "Z:\TecnProg"
