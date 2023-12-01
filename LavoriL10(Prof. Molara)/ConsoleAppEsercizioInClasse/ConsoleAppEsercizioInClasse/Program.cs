@@ -20,13 +20,13 @@
         {
 
             int n = ValidazioneInput();
-            int k = 0;
+            //int k = 0;
             int giri = 1, contatore = 0;
 
             for (int i = 1; i < Math.Pow(2,n); i++)
             {
                 for (int j = 0; j < Math.Pow(2,n - contatore) -1; j++) Console.Write(" ");
-
+                //Console.Write(" ");
                 Console.Write(i-1);
 
                 for (int j = 0; j < Math.Pow(2, n - contatore) - 1; j++) Console.Write(" ");
@@ -39,7 +39,7 @@
                     giri = giri * 2 + 1;
                 }
                 
-
+                
             }
 
         }
