@@ -24,7 +24,7 @@ namespace ConsoleAppTombola
             bool program = true;
             int numero,estrazioni=0;
             bool[] vector = new bool[90];
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write("╔══════════════════════════════════════╗\n");
             Console.Write("║                                      ║\n");
             Console.Write("║  T O M B O L A   N A T A L I Z I A   ║\n");
@@ -49,18 +49,18 @@ namespace ConsoleAppTombola
 
 
             }
-            while (program == true && estrazioni<=90)
+            while (program == true && estrazioni<90)
             {
                 Console.WriteLine();//possibili scelte stampate a video
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Premere '1' per estrarre un numero");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Premere '2' per verificare una cinquina");
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Premere '3' per verificare una decina");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Premere '4' per verificare una Tombola");
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Premere '5' per generare una schedina");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Premere '6' per uscire dal programma");
@@ -77,14 +77,14 @@ namespace ConsoleAppTombola
                         Console.Clear();
                         Console.ForegroundColor= ConsoleColor.Red;
                         Console.WriteLine($"E' uscito il numero {numeroEstratto}");
-                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
                         AggiornaTabellone(numeroEstratto, vector);
                         break;
                     case '2'://verifica cinquina tramite funzione
                         bool verifica5 = VerificaCinquina(vector);
                         if (verifica5 == true)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine("La cinquina e' valida.");
                         }
                         else
@@ -99,7 +99,7 @@ namespace ConsoleAppTombola
                         if (verifica10 == true)
                         {
                             Console.WriteLine("La decina e' valida.");
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                         }
                         else
                         {
@@ -112,7 +112,7 @@ namespace ConsoleAppTombola
                         bool verifica15 = VerificaTombola(vector);
                         if (verifica15 == true)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine("La tombola e' valida.");
                         }
                         else
@@ -123,7 +123,7 @@ namespace ConsoleAppTombola
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
                     case '5'://genero schedina tramite funzione
-                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Schedina();
                         Console.WriteLine(schedina);//stampo la schedina a video
                         Console.ForegroundColor = ConsoleColor.White;
@@ -135,7 +135,15 @@ namespace ConsoleAppTombola
                         Console.WriteLine("Scelta non valida");
                         break;
                 }
+
             }
+            if (estrazioni == 90)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nSono usciti tutti i numeri ☻ ");
+                Console.ReadKey();
+            }
+
 
             
         }
@@ -144,10 +152,12 @@ namespace ConsoleAppTombola
         #region Estrazione
         static int Estrazione(bool[] vector)//estrae numero casuale tra 1 e 90
         {
+
             Random rnd = new Random();
             int numero_estratto = rnd.Next(1, 91);
             while (true)
             {
+
                 if (vector[numero_estratto - 1] == false) break;//se il numero è già uscito ne genero un altro
                 else numero_estratto = rnd.Next(1, 91);
             }
@@ -158,7 +168,7 @@ namespace ConsoleAppTombola
         #region AggiornaTabellone
         static int AggiornaTabellone(int numero_estratto, bool[] vector)//per aggiornare il tabellone all'estrazione
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write("╔══════════════════════════════════════╗\n");
             Console.Write("║                                      ║\n");
             Console.Write("║  T O M B O L A   N A T A L I Z I A   ║\n");
@@ -181,7 +191,7 @@ namespace ConsoleAppTombola
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     if (i + 1 < 10) Console.Write(" ");//se nella prima fila aggiungo uno spazio
                     Console.Write(i+1);
                     Console.Write(" ");
