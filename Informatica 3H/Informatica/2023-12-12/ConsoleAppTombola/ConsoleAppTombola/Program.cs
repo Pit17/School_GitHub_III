@@ -20,6 +20,7 @@ namespace ConsoleAppTombola
         #region main
         static void Main(string[] args)
         {
+            
             Console.Title = "Autore_Pietro_Malzone_3H";//Autore e inializzazione variabili e titolo
             bool program = true;
             int numero,estrazioni=0;
