@@ -9,7 +9,7 @@ namespace ConsoleAppEsercizi8Gennaio
         {
           
             string principale = "Precipitevolissimevolmente";
-            string sottostringa = "vol";
+            string sottostringa = "cione";
 
             int risultato = Sottostringa(principale, sottostringa);
 
