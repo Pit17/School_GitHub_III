@@ -104,13 +104,15 @@ namespace ConsoleAppMasterMind
                 }
                 else
                 {
-                    Console.WriteLine($"Numeri estti = {esatte}");
+                    Console.WriteLine($"Numeri esatti = {esatte}");
                     Console.WriteLine($"Numeri con posizione sbagliata = {posizione}");
                     Console.WriteLine($"Numeri sbagliati = {errate}");
-                    return false;
+                    
 
                 }
+                
             }
+            return false;
         }
 
 
