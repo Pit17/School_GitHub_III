@@ -4,7 +4,7 @@ cls
 
 
 
-REM Imposta il percorso desiderato
+REM Imposta il percorso 
 set "percorso=Z:\Informatica"
 
 
@@ -15,6 +15,5 @@ REM Crea la cartella
 set "cartella=%percorso%\%data%"
 powershell -Command "New-Item -ItemType Directory -Path '%cartella%'"
 
-echo Cartella creata: %cartella%
 
 endlocal
