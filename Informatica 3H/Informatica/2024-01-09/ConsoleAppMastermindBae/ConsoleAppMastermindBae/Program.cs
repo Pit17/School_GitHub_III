@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -103,6 +104,15 @@ namespace ConsoleAppMasterMindBase
 
         static void Main(string[] args)
         {
+            Console.WindowHeight = 1;
+            Console.WindowWidth = 1;
+            for (int i = 0;i < 30; i++)
+            {
+                Console.WindowHeight++;
+                Console.WindowWidth+=3;
+                Thread.Sleep(10);
+                
+            }
             int[] vector = new int[4];
             int[] intArray = new int[4];
             int tentativi = 0;
