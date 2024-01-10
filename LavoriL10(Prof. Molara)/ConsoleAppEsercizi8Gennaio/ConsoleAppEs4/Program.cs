@@ -4,6 +4,14 @@
     {
         static void Main(string[] args)
         {
+            Console.WindowWidth = 1; 
+            Console.WindowHeight = 1;
+            for (int i = 0; i < 30; i++)
+            {
+                Console.WindowWidth += 3;
+                Console.WindowHeight ++;
+                Thread.Sleep(100);
+            }
             Console.WriteLine("Quanti nomi desidera inserire?");
             int lenght = int.Parse(Console.ReadLine());
             string[] names = new string[lenght];

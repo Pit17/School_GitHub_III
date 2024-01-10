@@ -42,7 +42,7 @@ namespace ConsoleAppEs7
 
             }
 
-            for (int i = 0; i < n; i++) if (primi[i]) Console.Write(i + " ");
+           
         }
         static void Main(string[] args)
         {
@@ -51,16 +51,17 @@ namespace ConsoleAppEs7
 
             for (int i = 0; i < 10; i++)
             {
-                int valori = 10 * (int)Math.Pow(10, i);
+                int valori = 10 * (int)Math.Pow(10,i);
                 cronometro.Restart();
                 generaP(valori);
                 cronometro.Stop();
-                long tempo1 = cronometro.ElapsedMilliseconds;
+                double tempo1 = (cronometro.ElapsedMilliseconds)/1000;
                 cronometro.Restart();
                 Eratostene(valori);
                 cronometro.Stop();
-                long tempo2 = cronometro.ElapsedMilliseconds;
+                double tempo2 = (cronometro.ElapsedMilliseconds) / 1000;
                 Console.WriteLine($"{valori}\t\t{tempo1}\t\t{tempo2}");
+                
             }
 
         }
