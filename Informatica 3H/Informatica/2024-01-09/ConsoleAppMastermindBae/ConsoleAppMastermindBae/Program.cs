@@ -12,6 +12,7 @@ namespace ConsoleAppMasterMindBase
 {
     internal class Program
     {
+        
         static void Estrazione(int[] vector)//estrae numero casuale tra 1 e 9 e riempe l'array
         {
             int i = 1;
@@ -104,12 +105,12 @@ namespace ConsoleAppMasterMindBase
 
         static void Main(string[] args)
         {
-            Console.WindowHeight = 1;
-            Console.WindowWidth = 1;
+            Console.WindowHeight = 60;
+            Console.WindowWidth = 31;
             for (int i = 0;i < 30; i++)
             {
-                Console.WindowHeight++;
-                Console.WindowWidth+=3;
+                Console.WindowHeight--;
+                Console.WindowWidth-=3;
                 Thread.Sleep(10);
                 
             }
