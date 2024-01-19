@@ -38,9 +38,9 @@ namespace ConsoleAppEsMatrici
         static int[,] Pagelle(string[] vettN, string[] vettM, int N, int M)
         {
             int[,] matrix = new int[N, M];
-            for (int i = 0; i < M; i++)
+            for (int i = 0; i < N; i++)
             {
-                for (int j = 0; j < N; j++)
+                for (int j = 0; j < M; j++)
                 {
                     Console.WriteLine($"Inserisca il voto di {vettN[i]} nella seguente materia {vettM[j]}:");
                     matrix[i, j] = leggiVoti();
@@ -79,9 +79,9 @@ namespace ConsoleAppEsMatrici
         {
             int somma = 0;
             int media;
-            for (int i = 0; i < M; i++)
+            for (int i = 0; i < N; i++)
             {
-                for (int j = 0; j < N; j++)
+                for (int j = 0; j < M; j++)
                 {
                     somma += matrice[i, j];
                 }
