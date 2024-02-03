@@ -37,12 +37,14 @@ namespace WpfAppNumeriInParole
                 varRead = Input.Text;
                 inputOK = int.TryParse(varRead, out numero);
             if (!inputOK) {
-                MessageBox.Show("Valore non valido"); 
+                MessageBox.Show("Valore non valido");
+                Input.Text = string.Empty;
                 return;
             }
             else if (numero < 0 || numero > 9999)//verifico sia compresa nel range
             {
                 MessageBox.Show("Il numero deve essere compreso tra 0 e 9999");
+                Input.Text = string.Empty;
                 return;
             }
 
