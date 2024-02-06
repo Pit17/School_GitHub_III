@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Autore Pietro Malzone 3H Numeri 7 digit
+//Autore Pietro Malzone 3H Numeri 7 digit dato un numero lo stampa a video
 namespace ConteggioAllaRovescia
 {
     internal class Program

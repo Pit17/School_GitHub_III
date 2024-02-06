@@ -20,7 +20,7 @@ namespace ConsoleAppMasterMindBase
             while (true)
             {
                 numero_estratto = rnd.Next(0, 10);
-                if (numero_estratto != vector[0] && numero_estratto != vector[1] && numero_estratto != vector[2] && numero_estratto != vector[3])//verifico non sia uscito
+                if (numero_estratto != vector[0] && numero_estratto != vector[1] && numero_estratto != vector[2] && numero_estratto != vector[3])//verifico non sia un numero già uscito
                 {
                     vector[i] = numero_estratto;
                     i++;
@@ -45,7 +45,7 @@ namespace ConsoleAppMasterMindBase
                     if (numero >= 0 && numero <= 9) break;
                     else Console.WriteLine("Numero non valido!");
                 }
-                else Console.WriteLine("Valore non valido! deve essere compreso tra 0 e 9");
+                else Console.WriteLine("Valore non valido! deve essere compreso tra 0 e 9");//se non valido spiego perchè
 
             }
             return numero;
@@ -114,9 +114,11 @@ namespace ConsoleAppMasterMindBase
             for (int i = 0; i < 4; i++) vector[i] = -1;
 
             Estrazione(vector);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Title = "PietroMalzone3H";//nome e testo iniziale
             Console.WriteLine(" __  __   ____    ____  _____  ____ _____  __  __  _  __  _  ____ \r\n|  \\/  | / () \\  (_ (_`|_   _|| ===|| () )|  \\/  || ||  \\| || _) \\\r\n|_|\\/|_|/__/\\__\\.__)__)  |_|  |____||_|\\_\\|_|\\/|_||_||_|\\__||____/");
             Console.WriteLine();
+            
             Console.WriteLine("         ? ? ? ?");
             Console.WriteLine();
             Console.WriteLine("Scegliere la difficoltà");
@@ -152,7 +154,7 @@ namespace ConsoleAppMasterMindBase
 
             for (int i = 0; i < tentativi; i++)//avvio il gioco per il numero di tentativi
             {
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Yellow;
 
                 Console.WriteLine($"Tentativo n: {i + 1}");
                 LetturaNumero(intArray);//leggo numeri
@@ -161,7 +163,7 @@ namespace ConsoleAppMasterMindBase
                 if (esatte == 4)//se ha vinto interrompo il gioco e riferisco
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Hai Vinto! Ci hai messo {i} tentativi");
+                    Console.WriteLine($"Hai Vinto! Ci hai messo {i+1} tentativi");
                     break;
                 }
             }

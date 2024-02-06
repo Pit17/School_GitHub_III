@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F87E0C3-C566-45C6-BBDE-60DF0F9FAC89}</ProjectGuid>
+    <ProjectGuid>{92C143E8-443A-4B6F-A65B-CB7D8C9CE166}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleAppTombola</RootNamespace>
-    <AssemblyName>ConsoleAppTombola</AssemblyName>
+    <RootNamespace>ConsoleAppLancioDeiDadi</RootNamespace>
+    <AssemblyName>ConsoleAppLancioDeiDadi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

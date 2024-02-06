@@ -1,31 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace WpfAppNumeriInParole
+//Autore Pietro Malzone 3H 24/10/2023 Console App conversione da numero intero a numero scritto in una stringa
+namespace ConsoleAppNumeriInParole
 {
-    //Autore Pietro MAlzone 3H 30/01/2023 WPF per trasformare numeri in lettere
-    public partial class MainWindow : Window
+    internal class Program
     {
-        public int i = 0;
-        public MainWindow()
+        static void Main(string[] args)
         {
-            InitializeComponent();
-        }
+           
 
-        private void button_click(object sender, RoutedEventArgs e)
-        {
+
+            #region Nome
+            Console.Title = ("AutorePietroMalzone3H17-10-2023");
+            Console.WriteLine("AutorePietroMalzone3H17-10-2023");
+            #endregion
 
             string numeroInLettere = "";
             int numero;
@@ -33,22 +25,24 @@ namespace WpfAppNumeriInParole
             string varRead;
 
             #region input
-
-                varRead = Input.Text;
-                inputOK = int.TryParse(varRead, out numero);
-            if (!inputOK) {
-                MessageBox.Show("Valore non valido"); 
-                return;
-            }
-            else if (numero < 0 || numero > 9999)//verifico sia compresa nel range
+            do
             {
-                MessageBox.Show("Il numero deve essere compreso tra 0 e 9999");
-                return;
-            }
+                Console.WriteLine("\nNOTA BENE: Il valore deve essere compreso tra 0 e 9999");
+                Console.Write("\nInserisca il valore intero -->");
 
+                varRead = Console.ReadLine();
+                inputOK = int.TryParse(varRead, out numero);
+                if (!inputOK) Console.WriteLine("\nInput non valido :( \nRiprovi");
+                else if (numero < 0 || numero > 9999)//verifico sia compresa nel range
+                {
+                    Console.WriteLine("\nNumeri inferiori  a 0 o superiori a 9999 non sono accettati.");
+                    inputOK = false;
+                }
+
+            } while (!inputOK);
             #endregion
 
-
+            
             if (numero == 0)//caso 0
             {
 
@@ -189,11 +183,11 @@ namespace WpfAppNumeriInParole
                         numeroInLettere += "settanta";
                         break;
                     case 8:
-                        if (numero / 100 % 10 != 0)
+                        if(numero /100 %10 != 0)
                         {
                             numeroInLettere = numeroInLettere.Substring(0, numeroInLettere.Length - 1);
                         }
-
+                        
                         numeroInLettere += "ottanta";
                         break;
                     case 9:
@@ -213,7 +207,7 @@ namespace WpfAppNumeriInParole
                             if (numero / 10 % 10 != 0)
                             {
                                 numeroInLettere = numeroInLettere.Substring(0, numeroInLettere.Length - 1);
-
+                                
                             }
                             numeroInLettere += "uno";
                             break;
@@ -240,7 +234,7 @@ namespace WpfAppNumeriInParole
                             if (numero / 10 % 10 != 0)
                             {
                                 numeroInLettere = numeroInLettere.Substring(0, numeroInLettere.Length - 1);
-
+                                
                             }
                             numeroInLettere += "otto";
                             break;
@@ -257,20 +251,17 @@ namespace WpfAppNumeriInParole
 
             }
 
+
             #region output
-            Output.Text = numeroInLettere;
-            Input.IsEnabled = false;
+            Console.WriteLine("Il numero in lettere è --> " + (numeroInLettere));
             #endregion
 
-        }
 
-        private void button_click_reset(object sender, RoutedEventArgs e)
-        {         
-            Input.IsEnabled = true;
-            Input.Text = string.Empty;
-            Cronologia.Text = $"\n{i + 1}. {Output.Text}" + Cronologia.Text;
-            i++;
-            Output.Text = String.Empty;
+            #region termine del programma
+            Console.WriteLine("\n premere un tasto per terminare il programma");
+            Console.ReadKey();
+            #endregion
+
 
         }
     }

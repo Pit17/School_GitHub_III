@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F87E0C3-C566-45C6-BBDE-60DF0F9FAC89}</ProjectGuid>
+    <ProjectGuid>{9E4065A4-4F3E-4456-8668-50FE19A05A20}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleAppTombola</RootNamespace>
-    <AssemblyName>ConsoleAppTombola</AssemblyName>
+    <RootNamespace>ConsoleAppNumeriInParole</RootNamespace>
+    <AssemblyName>ConsoleAppNumeriInParole</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

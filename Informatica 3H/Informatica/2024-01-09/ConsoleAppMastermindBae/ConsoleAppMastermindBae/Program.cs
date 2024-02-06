@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -12,7 +11,6 @@ namespace ConsoleAppMasterMindBase
 {
     internal class Program
     {
-        
         static void Estrazione(int[] vector)//estrae numero casuale tra 1 e 9 e riempe l'array
         {
             int i = 1;
@@ -105,15 +103,6 @@ namespace ConsoleAppMasterMindBase
 
         static void Main(string[] args)
         {
-            Console.WindowHeight = 60;
-            Console.WindowWidth = 31;
-            for (int i = 0;i < 30; i++)
-            {
-                Console.WindowHeight--;
-                Console.WindowWidth-=3;
-                Thread.Sleep(10);
-                
-            }
             int[] vector = new int[4];
             int[] intArray = new int[4];
             int tentativi = 0;

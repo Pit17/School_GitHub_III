@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F87E0C3-C566-45C6-BBDE-60DF0F9FAC89}</ProjectGuid>
+    <ProjectGuid>{EAA14D74-5ED9-40FF-BC15-1DE1132AA649}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleAppTombola</RootNamespace>
-    <AssemblyName>ConsoleAppTombola</AssemblyName>
+    <RootNamespace>ConsoleAppCompiti11_10_2023</RootNamespace>
+    <AssemblyName>ConsoleAppCompiti11-10-2023</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

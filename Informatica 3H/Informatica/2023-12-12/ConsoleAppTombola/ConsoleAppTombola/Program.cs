@@ -20,7 +20,6 @@ namespace ConsoleAppTombola
         #region main
         static void Main(string[] args)
         {
-            
             Console.Title = "Autore_Pietro_Malzone_3H";//Autore e inializzazione variabili e titolo
             bool program = true;
             int numero,estrazioni=0;
@@ -56,11 +55,11 @@ namespace ConsoleAppTombola
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Premere '1' per estrarre un numero");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Premere '2' per verificare una cinquina (Non bisogna inserire numeri uguali)");
+                Console.WriteLine("Premere '2' per verificare una cinquina");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("Premere '3' per verificare una decina (Non bisogna inserire numeri uguali)");
+                Console.WriteLine("Premere '3' per verificare una decina");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Premere '4' per verificare una Tombola (Non bisogna inserire numeri uguali)");
+                Console.WriteLine("Premere '4' per verificare una Tombola");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Premere '5' per generare una schedina");
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -302,8 +301,6 @@ namespace ConsoleAppTombola
         #region genera_Schedina
         static void Schedina()
         {
-
-            Console.WriteLine("Segnarsi la cartella su un foglio poichè essa verrà eliminata alla prossima estrazione!");
             Random rnd = new Random();
             int[] scheda = new int[27]; //array schedina
 
