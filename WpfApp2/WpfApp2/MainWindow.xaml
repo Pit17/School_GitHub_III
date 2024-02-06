@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Main">
+                <Grid Background="#FFE0E0E0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="364*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Input" HorizontalAlignment="Left" Margin="53,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="47" FontSize="36" Grid.ColumnSpan="2" TextChanged="Input_TextChanged"/>
+                    <Button x:Name="button" Content="--->" HorizontalAlignment="Left" Margin="258,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.492,0.553" Click="button_click" Height="41" Width="146" Background="#FF4EFF00" BorderBrush="Black" Foreground="Black" FontFamily="SimSun-ExtB" Grid.Column="1"/>
+                    <TextBlock x:Name="Output" HorizontalAlignment="Left" Margin="420,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" FontSize="22" Height="98" Grid.Column="1"/>
+                    <Label Content="&#xD;&#xA;Convertitore numeri in Parole" HorizontalAlignment="Left" Margin="3,1,0,0" VerticalAlignment="Top" Height="116" Width="609" FontFamily="Arial Black" FontWeight="Bold" FontSize="36" Grid.Column="1"/>
+                    <Button x:Name="button_Copy" Content="Reset" HorizontalAlignment="Left" Margin="258,248,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.437" Click="button_click_reset" Height="43" Width="146" Background="Red" BorderBrush="Black" Foreground="Black" FontFamily="SimSun-ExtB" Grid.Column="1"/>
+                    <Label Content="Numero:" HorizontalAlignment="Left" Margin="53,122,0,0" VerticalAlignment="Top" FontSize="36" Height="62" Width="330" Grid.ColumnSpan="2"/>
+                    <Label Content="Pietro Malzone 3H 2024-01-30" HorizontalAlignment="Left" Margin="512,354,0,0" VerticalAlignment="Top" Width="200" FontFamily="Liberation Mono" Height="30" FontSize="18" Grid.Column="1"/>
+                    <Label Content="Risultato:" HorizontalAlignment="Left" Margin="410,124,0,0" VerticalAlignment="Top" Height="58" Width="203" FontSize="36" Grid.Column="1"/>
+                    <Label x:Name="Placeholder" Content="Scrivi il tuo numero" Background="Transparent" Opacity="0.5" IsHitTestVisible="False" Margin="53,194,535,104" Grid.ColumnSpan="2" FontSize="18"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Cronologia">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="Cronologia" HorizontalAlignment="Left" Margin="208,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="285" Width="504" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFE0E0E0" VerticalScrollBarVisibility="Visible" IsReadOnly="True" FontSize="20"/>
+                    <Label Content="Pietro Malzone 3H 2024-01-30" HorizontalAlignment="Left" Margin="578,354,0,0" VerticalAlignment="Top" Width="200" FontFamily="Liberation Mono" Height="30" FontSize="18"/>
+                    <Label Content="Cronologia:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="36"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Help">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Pietro Malzone 3H 2024-01-30" HorizontalAlignment="Left" Margin="578,354,0,0" VerticalAlignment="Top" Width="200" FontFamily="Liberation Mono" Height="30" FontSize="18"/>
+                    <Label Content="Questo programma ti permette di trasformare un numero in cifre inserito &#xD;&#xA;dall'utente nella casella di sinistra nel numero scritto in lettere nella &#xD;&#xA;casella di destra premdendo il tasto &quot;--&gt;&quot; .E' possibile effettuare diverse &#xD;&#xA;trasformazioni semplicemente premendo reset, inoltre è possible vedere la &#xD;&#xA;cronologia nella tab &quot;Cronologia&quot;." HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="22" Height="276" Width="754" Cursor="AppStarting"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
