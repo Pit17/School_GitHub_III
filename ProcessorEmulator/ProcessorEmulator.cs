@@ -26,27 +26,24 @@ namespace ProcessorEmulator
             {
                 return RAM[PC++];
             }
-            //static void WriteTextToFile(ushort instr_code, ushort instr_addr)
-            //{
-            //    try
-            //    {
-            //        // Apre il file specificato per la scrittura
-            //        using (StreamWriter writer = new StreamWriter("C:\\Users\\Utente\\Downloads\\ProcessorEmulator--SCHEMA-GENERALE\\ProcessorEmulator\\JMP.txt"))
-            //        {
-            //        // Scrive il testo nel file
-            //        if (instr_code == 8 || instr_code == 6 || instr_code == 7)
-            //            writer.WriteLine($"Instruzione {instr_code} all'indirizzo {instr_addr}");
-                        
-                
-            //        writer.Close();
-            //    }
+        static void WriteTextToFile(ushort instr_code, ushort instr_addr)
+        {
 
-            //}
-            //    catch (Exception ex)
-            //    {
-            //    Console.WriteLine($"Si è verificato un errore durante la scrittura nel file: {ex.Message}");
-            //    }
-            //}
+
+            // Apre il file specificato per la scrittura
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\pietro.malzone\Desktop\ProcessorEmulator\JMP.txt",true))
+            {
+                // Scrive il testo nel file se viene effettuato un jump
+                if (instr_code == 8 || instr_code == 6 || instr_code == 7)
+                {
+                    writer.WriteLine($"Instruzione {instr_code} all'indirizzo {instr_addr}");
+                    
+                    
+
+                }
+            }
+
+        }
 
         static void RunMachine()
             {
@@ -56,7 +53,7 @@ namespace ProcessorEmulator
                     ushort instr_addr = PC;
                     ushort instr_code = FetchByte();
                     ushort op1, op2, op3;
-                    //WriteTextToFile(instr_code, instr_addr);
+                    WriteTextToFile(instr_code, instr_addr);
                     // Instruction Decode + Execute
                     switch (instr_code)
                     {
@@ -351,11 +348,15 @@ namespace ProcessorEmulator
                             if (op1 >= bound) throw new Exception("valore invalido all'indirizzo " + instr_addr);
 
                             if (op1 >= maxValue)
-                                Console.Write((char)regs[op1 % maxValue]);
+                            {
+
+                            Console.Write((char)regs[op1 % maxValue]);
+                            WriteCharToFile((char)regs[op1 % maxValue]);
+                             }
                             else
                                 Console.Write((char)op1);
-
-                            break;
+                                WriteCharToFile((char)op1);
+                        break;
 
                         case 20: // in op1
                             op1 = FetchByte();
@@ -376,7 +377,26 @@ namespace ProcessorEmulator
                     }
                 }
             }
+            static void WriteCharToFile(char c)
+            {
 
+                // Apre il file specificato per la scrittura
+                using (StreamWriter writer = new StreamWriter(@"C:\Users\pietro.malzone\Desktop\ProcessorEmulator\JMP.txt", true))
+                {
+                // Scrive il testo nel file se viene effettuato un jump
+                
+                    if (c != '耀')
+                    {
+                        writer.Write(c);
+                        writer.WriteLine();
+                    }
+                   
+
+
+
+                
+            }
+        }
             static void LoadRAM(string file_name)
             {
                 using (StreamReader sr = new StreamReader(file_name))
