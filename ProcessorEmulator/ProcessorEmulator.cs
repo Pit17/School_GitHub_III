@@ -29,22 +29,33 @@ namespace ProcessorEmulator
         static void WriteTextToFile(ushort instr_code, ushort instr_addr)
         {
 
-
             // Apre il file specificato per la scrittura
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\pietro.malzone\Desktop\ProcessorEmulator\JMP.txt",true))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\Utente\Documents\GitHub\GitHUb\ProcessorEmulator\JMP.txt", true))
             {
                 // Scrive il testo nel file se viene effettuato un jump
                 if (instr_code == 8 || instr_code == 6 || instr_code == 7)
                 {
                     writer.WriteLine($"Instruzione {instr_code} all'indirizzo {instr_addr}");
-                    
-                    
-
+                   
                 }
             }
 
         }
+        static void WriteCharToFile(char c)
+        {
 
+            // Apre il file specificato per la scrittura
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\Utente\Documents\GitHub\GitHUb\ProcessorEmulator\JMP.txtdi", true))
+            {
+                // Scrive il testo nel file se viene effettuato un jump
+
+                if (c != '耀')
+                {
+                    writer.Write(c);
+                    writer.WriteLine();
+                }
+            }
+        }
         static void RunMachine()
             {
                 while (true)
@@ -377,26 +388,7 @@ namespace ProcessorEmulator
                     }
                 }
             }
-            static void WriteCharToFile(char c)
-            {
-
-                // Apre il file specificato per la scrittura
-                using (StreamWriter writer = new StreamWriter(@"C:\Users\pietro.malzone\Desktop\ProcessorEmulator\JMP.txt", true))
-                {
-                // Scrive il testo nel file se viene effettuato un jump
-                
-                    if (c != '耀')
-                    {
-                        writer.Write(c);
-                        writer.WriteLine();
-                    }
-                   
-
-
-
-                
-            }
-        }
+           
             static void LoadRAM(string file_name)
             {
                 using (StreamReader sr = new StreamReader(file_name))
