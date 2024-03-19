@@ -147,7 +147,7 @@ namespace WpfAppDijkstra
 
             }
             Thread.Sleep(100);
-            Result.Text = (dijkstra(0, 2)).ToString();
+            Result.Text = (dijkstra(0,2)).ToString();
 
         }
 
