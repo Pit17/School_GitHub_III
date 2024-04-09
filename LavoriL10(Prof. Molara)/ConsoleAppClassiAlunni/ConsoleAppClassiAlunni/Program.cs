@@ -1,5 +1,6 @@
 ﻿namespace ConsoleAppClassiAlunni
 {
+    
     public class GestoreAlunno
     {
         private string name;

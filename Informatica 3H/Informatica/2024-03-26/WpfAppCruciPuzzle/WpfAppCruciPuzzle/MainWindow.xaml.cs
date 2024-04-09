@@ -217,13 +217,13 @@ namespace WpfAppCruciPuzzle
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = percorso;
             openFileDialog.Filter = "Text documents (.txt)|*.txt";//modo per permettere all'utente di scegliere il file
-
+            
             if (openFileDialog.ShowDialog() == true)
             {
                 percorso = openFileDialog.FileName;
                 
                 
-            }
+            }else throw new Exception("Errore nell'apertura del file");
             gridwin.Children.Clear();
             words.Clear();
 
