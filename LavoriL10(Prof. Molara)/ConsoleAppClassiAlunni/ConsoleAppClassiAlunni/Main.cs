@@ -17,6 +17,12 @@ namespace ConsoleAppClassiAlunni
         static void Alunno()
         {
             GestoreAlunno alunno = new GestoreAlunno();
+            alunno.SetBirthYear(2007);
+            alunno.SetName("Pietro");
+            alunno.SetSurname("Malzone");
+            alunno.GetBirthYear();
+            alunno.GetName();
+            alunno.GetSurname();
             alunno.AddMarks(GestoreAlunno.Materie.Italiano, 6);
             alunno.AddMarks(GestoreAlunno.Materie.Italiano, 7);
             alunno.AddMarks(GestoreAlunno.Materie.Italiano, 8);
