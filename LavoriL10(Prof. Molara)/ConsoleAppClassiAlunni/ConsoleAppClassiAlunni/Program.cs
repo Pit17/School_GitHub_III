@@ -15,13 +15,16 @@
             Informatica,
             Inglese
         }
-        public GestoreAlunno()
+        public GestoreAlunno(string name,string surname,int birth_year)
         {
             marks = new List<List<int>>();
             for (int i = 0; i < n_materie; i++)
             {
                 marks.Add(new List<int>());
             }
+            this.name = name;
+            this.surname = surname;
+            this.birth_year = birth_year;
 
         }
 
@@ -29,29 +32,17 @@
         {
             marks[(int)materia].Add(mark);
         }
-        public void SetName(string nome)
+        public string GetName
         {
-            name = nome;
+            get { return name; }
         }
-        public void SetSurname(string cognome)
+        public string GetSurname
         {
-            surname = cognome;
+            get { return surname; }
         }
-        public void SetBirthYear(int anno)
+        public int GetBirthYear
         {
-            birth_year = anno;
-        }
-        public void GetName()
-        {
-            Console.WriteLine(name);
-        }
-        public void GetSurname()
-        {
-            Console.WriteLine(surname);
-        }
-        public void GetBirthYear()
-        {
-            Console.WriteLine(birth_year);
+            get { return birth_year; }
         }
 
         public List<int> GetMarks(Materie materia)
