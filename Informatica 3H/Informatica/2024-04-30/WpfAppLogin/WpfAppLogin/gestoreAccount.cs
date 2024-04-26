@@ -19,7 +19,7 @@ namespace WpfAppLogin
             
             using (StreamReader sr = new StreamReader(path))
             {
-                sr.ReadLine();
+                
                 while (!sr.EndOfStream)
                 {
                     var lines = sr.ReadLine().Split('#');
