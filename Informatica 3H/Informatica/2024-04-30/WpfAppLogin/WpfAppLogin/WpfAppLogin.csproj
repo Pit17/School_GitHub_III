@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="user.png" />
+    <None Remove="userchiaro.png" />
+    <None Remove="userscuro.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="user.png" />
+    <Resource Include="userchiaro.png" />
+    <Resource Include="userscuro.png" />
+  </ItemGroup>
+
+</Project>
