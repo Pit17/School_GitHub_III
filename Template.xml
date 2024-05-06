@@ -1,0 +1,78 @@
+
+        mc:Ignorable="d"
+        Title="Login" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" 
+        MouseDown="Window_MouseDown">
+
+
+		<Border CornerRadius="20"
+            
+            BorderThickness="5"
+            Background="#153448"
+            BorderBrush="#3C5B6F">
+
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="5"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="btnMinimize"
+                    Background="LightBlue"
+                    BorderThickness="0"
+                    Grid.Column="1"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="MontSerrat"
+                    Cursor="Hand"
+                    Click="minimizeClick">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnClose"
+                    Background="DeepPink"
+                    BorderThickness="0"
+                    Grid.Column="2"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="12"
+                    FontFamily="MontSerrat"
+                    Cursor="Hand"
+                    Click="CloseClick">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                
