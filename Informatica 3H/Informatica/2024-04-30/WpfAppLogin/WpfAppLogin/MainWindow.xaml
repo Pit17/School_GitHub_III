@@ -209,6 +209,27 @@
                         </Button.Template>
 
                     </Button>
+                    <Button x:Name="btnReg_Copy"
+                        Background="#948979"
+                        BorderThickness="0"
+                        Content="Delete"
+                        Foreground="White"
+                        FontSize="12"
+                        FontFamily="MontSerrat"
+                        Cursor="Hand"
+                        Click="RegClick" Height="25">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="50" Height="18"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
 
                 </StackPanel>
                 <Button x:Name="Loginselector" 
@@ -258,6 +279,28 @@
                 <Image HorizontalAlignment="Left" Height="100" Margin="309,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="/userchiaro.png"/>
                 <Label Content="Pietro Malzone 3H" HorizontalAlignment="Left" Margin="606,473,0,0" Grid.Row="1" VerticalAlignment="Top" Width="211" Background="{x:Null}" Foreground="#FFDFD0B8" FontFamily="MontSerrat" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="4"/>
                 <Label Content="Pascal Log In" HorizontalAlignment="Left" Margin="286,124,0,0" Grid.Row="1" VerticalAlignment="Top" Width="146" Background="{x:Null}" Foreground="#FFDFD0B8" FontFamily="MontSerrat" FontWeight="Bold" FontSize="22"/>
+                <Button x:Name="RegisterSelector_Copy" 
+                    
+                    FontSize="12"
+                    Content="DELETE" 
+                    FontFamily="MontSerrat"
+                    HorizontalAlignment="Left" 
+                    Margin="145,0,0,0" 
+                    VerticalAlignment="Center"                  
+                    Background="#948979"
+                    BorderThickness="0" 
+                    Height="30" Foreground="White" Click="RegisterSelector_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="60" Height="20"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
             </Grid>
 
