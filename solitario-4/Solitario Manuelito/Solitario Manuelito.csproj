@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Solitario_Manuelito</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1A.jpg" />
+    <None Remove="6D.jpg" />
+    <None Remove="bianco.png" />
+    <None Remove="RETRO.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1A.jpg" />
+    <Resource Include="6D.jpg" />
+    <Resource Include="bianco.png" />
+    <Resource Include="RETRO.jpg" />
+  </ItemGroup>
+
+</Project>
