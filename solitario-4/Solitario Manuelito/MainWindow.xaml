@@ -5,19 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solitario_Manuelito"
         mc:Ignorable="d"
-        Title="Solitario Manuelito" Height="800" Width="800"
+        Title="Solitario Manuelito" Height="900" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen" 
         MouseDown="Window_MouseDown">
+        <Window.Resources>
+        
+            <Style TargetType="Canvas">
+            <EventSetter Event="Drop" Handler="Card_drop" />
+
+            <EventSetter Event="MouseMove" Handler="Card_move" />
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="Background"  Value="White"/>
+
+        </Style>
+        </Window.Resources>
+
+
+
+
     <Border CornerRadius="20"
             
             BorderThickness="5"
             Background="#97FFF4"
             BorderBrush="#793FDF">
-
+            
 
         <Grid>
             <Grid.RowDefinitions>
@@ -94,13 +109,49 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Margin="96,478,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Start_Click" Height="42" Width="64"/>
-            <Grid x:Name="trash_stack" Grid.Row="1" Margin="327,252,0,282"/>
+            <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Margin="198,340,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Start_Click" Height="42" Width="64"/>
+            <Grid x:Name="trash_stack_0" Grid.Row="1" Margin="283,274,340,411" >
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+
+            <Grid x:Name="trash_stack_1" Grid.Row="1" Margin="434,274,189,411">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="trash_stack_2" Grid.Row="1" Margin="583,274,40,411">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="slot_0" Grid.Row="1" Margin="128,525,499,161">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="slot_1" Grid.Row="1" Margin="283,521,340,161">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5" Height="178" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid x:Name="slot_2" Grid.Row="1" Margin="434,521,189,161">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="slot_3" Grid.Row="1" Margin="583,521,40,161">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="scala_0" Grid.Row="1" Margin="128,30,499,642">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="scala_1" Grid.Row="1" Margin="283,30,340,642">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="scala_2" Grid.Row="1" Margin="434,30,189,642">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
+            <Grid x:Name="scala_3" Grid.Row="1" Margin="583,30,40,642">
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+            </Grid>
             
+
+
 
 
 
 
         </Grid>
     </Border>
+    
 </Window>

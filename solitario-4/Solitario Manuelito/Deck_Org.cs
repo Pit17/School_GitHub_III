@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows;
 
 namespace Solitario_Manuelito
 {
@@ -38,31 +40,43 @@ namespace Solitario_Manuelito
         }
 
 
-        public void shuffle()
+        public int shuffle()
         {
             Random rnd = new Random();
-            for (int i = 0; i < card_deck.Length; i++)
+            int r = rnd.Next(0, card_deck.Length);
+            if (card_deck_bool[r] == true)
             {
-                int r = rnd.Next(0, card_deck.Length);
-                string temp = card_deck[i];
-                card_deck[i] = card_deck[r];
-                card_deck[r] = temp;
+                card_deck_bool[r] = false;
+                return r;
+            }else
+            {
+                if (!(card_deck_bool.Contains(true)))
+                {
+                    return -1;
+                }
+                
+                return shuffle();
             }
+                
         }
 
-        public Image takeCard()
+        public Canvas takeCard()
         {
-            Image image = new Image();
 
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri("\\MARTINA-GRAFFIETI-CARTE-ITT-anonimo\\1A.jpg", UriKind.RelativeOrAbsolute);
-            bitmap.EndInit();
-            image.Source = bitmap;
-            image.Width = 200;
-            image.Height = 200;
-            return image;
-
+            Canvas card = new Canvas();
+            int r1 = shuffle();
+            if (r1 == -1)
+            {
+                MessageBox.Show("Deck is empty");
+                return null;
+            }else
+            {
+                card.Width = 100;
+                card.Height = 150;
+                card.Background = new ImageBrush(new BitmapImage(new Uri(@$"..\..\..\MARTINA-GRAFFIETI-CARTE-ITT-anonimo/{card_deck[r1]}.jpg", UriKind.RelativeOrAbsolute)));
+                return card;
+            }
+            
         }
     }
 }

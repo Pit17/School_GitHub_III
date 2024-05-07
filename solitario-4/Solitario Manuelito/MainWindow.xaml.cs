@@ -38,19 +38,36 @@ namespace Solitario_Manuelito
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
-
         }
-
-       
 
         private void Deck_Click(object sender, RoutedEventArgs e)
         {
-            trash_stack.Children.Add(Deck_Org.takeCard());
+            trash_stack_0.Children.Add(Deck_Org.takeCard());
+            trash_stack_1.Children.Add(Deck_Org.takeCard());
+            trash_stack_2.Children.Add(Deck_Org.takeCard());
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             Deck_Org.setUp();
+            slot_0.Children.Add(Deck_Org.takeCard());
+            slot_1.Children.Add(Deck_Org.takeCard());
+            slot_2.Children.Add(Deck_Org.takeCard());
+            slot_3.Children.Add(Deck_Org.takeCard());
+        }
+        private void Card_move(object sender, MouseEventArgs e)
+        {
+            if(e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragDrop.DoDragDrop(new Canvas(),new Canvas(), DragDropEffects.Move);
+            }
+        }
+        private void Card_drop(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragDrop.DoDragDrop(new Canvas(), new Canvas(), DragDropEffects.Move);
+            }
         }
     }
 }

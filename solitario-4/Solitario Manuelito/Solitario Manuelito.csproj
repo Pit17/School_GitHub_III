@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="1A.jpg" />
     <None Remove="6D.jpg" />
+    <None Remove="8B.jpg" />
     <None Remove="bianco.png" />
     <None Remove="RETRO.jpg" />
   </ItemGroup>
@@ -19,6 +20,7 @@
   <ItemGroup>
     <Resource Include="1A.jpg" />
     <Resource Include="6D.jpg" />
+    <Resource Include="8B.jpg" />
     <Resource Include="bianco.png" />
     <Resource Include="RETRO.jpg" />
   </ItemGroup>
