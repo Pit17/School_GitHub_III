@@ -6,9 +6,31 @@ using System.Threading.Tasks;
 
 namespace Solitario_Manuelito
 {
-    class Deck
+    class Carta
     {
-        public string[] card_deck = new string[40];
+        public enum Semi
+        {
+            Mouse,
+            Tastiere,
+            Usb,
+            Cuffie
+        }
+
+        public enum Valori
+        {
+            Asso = 1,
+            Due,
+            Tre,
+            Quattro,
+            Cinque,
+            Sei,
+            Sette,
+            Otto,
+            Nove,
+            Dieci,
+            
+        }
+
 
     }
 }

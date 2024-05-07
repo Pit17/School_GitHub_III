@@ -18,8 +18,7 @@ namespace Solitario_Manuelito
     public partial class MainWindow : Window
     {
        
-        public string[] card_deck = new string[40];
-        public bool[] card_deck_bool = new bool[40];
+        Deck_Org Deck_Org = new Deck_Org();
         public MainWindow()
         {
             InitializeComponent();
@@ -46,32 +45,12 @@ namespace Solitario_Manuelito
 
         private void Deck_Click(object sender, RoutedEventArgs e)
         {
-            
-
+            trash_stack.Children.Add(Deck_Org.takeCard());
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 1;  i <= 10; i++)
-            {
-                card_deck[i-1] = $"{i}A";
-            }
-            for (int i = 1; i <= 10; i++)
-            {
-                card_deck[i+9] = $"{i}B";
-            }
-            for (int i = 1; i <= 10; i++)
-            {
-                card_deck[i+19] = $"{i}C";
-            }
-            for (int i = 1; i <= 10; i++)
-            {
-                card_deck[i+29] = $"{i}D";
-            }
-            for(int i = 1;i < card_deck_bool.Length; i++)
-            {
-                card_deck_bool[i] = true ;
-            }
+            Deck_Org.setUp();
         }
     }
 }
