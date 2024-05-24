@@ -14,7 +14,15 @@
     <None Remove="6D.jpg" />
     <None Remove="8B.jpg" />
     <None Remove="bianco.png" />
+    <None Remove="cactus.png" />
+    <None Remove="contorno_bottone.png" />
+    <None Remove="Fonts\Mexicana.ttf" />
+    <None Remove="Fonts\MexicanaHollow.ttf" />
+    <None Remove="Logo.png" />
+    <None Remove="paesaggio.png" />
     <None Remove="RETRO.jpg" />
+    <None Remove="tacos.png" />
+    <None Remove="tramonto.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +30,19 @@
     <Resource Include="6D.jpg" />
     <Resource Include="8B.jpg" />
     <Resource Include="bianco.png" />
+    <Resource Include="cactus.png" />
+    <Resource Include="contorno_bottone.png" />
+    <Resource Include="Fonts\MexicanaHollow.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+	  <Resource Include="Fonts\Mexicana.ttf">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+    <Resource Include="Logo.png" />
+    <Resource Include="paesaggio.png" />
     <Resource Include="RETRO.jpg" />
+    <Resource Include="tacos.png" />
+    <Resource Include="tramonto.jpg" />
   </ItemGroup>
 
 </Project>

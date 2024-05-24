@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Solitario_Manuelito"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="MexicanaHollow">./Fonts/MexicanaHollow.ttf#MexicanaHollow</FontFamily>
+        <FontFamily x:Key="Mexicana">./Fonts/Mexicana.ttf#Mexicana</FontFamily>
     </Application.Resources>
 </Application>

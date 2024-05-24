@@ -12,8 +12,9 @@ namespace Solitario_Manuelito
 {
     internal class Deck_Org
     {
-        string[] card_deck = new string[40];
-        bool[] card_deck_bool = new bool[40];
+        
+        public string[] card_deck = new string[40];
+        public bool[] card_deck_bool = new bool[40];
 
         public void setUp()
         {
@@ -38,8 +39,6 @@ namespace Solitario_Manuelito
                 card_deck_bool[i] = true;
             }
         }
-
-
         public int shuffle()
         {
             Random rnd = new Random();
@@ -48,35 +47,24 @@ namespace Solitario_Manuelito
             {
                 card_deck_bool[r] = false;
                 return r;
-            }else
+            }
+            else
             {
                 if (!(card_deck_bool.Contains(true)))
                 {
                     return -1;
                 }
-                
+
                 return shuffle();
             }
-                
+
         }
-
-        public Canvas takeCard()
+        public Carta takeCard()
         {
-
-            Canvas card = new Canvas();
             int r1 = shuffle();
-            if (r1 == -1)
-            {
-                MessageBox.Show("Deck is empty");
-                return null;
-            }else
-            {
-                card.Width = 100;
-                card.Height = 150;
-                card.Background = new ImageBrush(new BitmapImage(new Uri(@$"..\..\..\MARTINA-GRAFFIETI-CARTE-ITT-anonimo/{card_deck[r1]}.jpg", UriKind.RelativeOrAbsolute)));
-                return card;
-            }
-            
+            Carta c = new Carta(card_deck[r1]);
+            if (c.canvas == null) MessageBox.Show("huh?");
+            return c;
         }
     }
 }

@@ -22,6 +22,12 @@ namespace Solitario_Manuelito
         public MainWindow()
         {
             InitializeComponent();
+            Deck_Org.setUp();
+            slot_0.Children.Add(Deck_Org.takeCard().canvas);
+            slot_1.Children.Add(Deck_Org.takeCard().canvas);
+            slot_2.Children.Add(Deck_Org.takeCard().canvas);
+            slot_3.Children.Add(Deck_Org.takeCard().canvas);
+            
         }
 
         private void CloseClick(object sender, RoutedEventArgs e)
@@ -34,40 +40,36 @@ namespace Solitario_Manuelito
             WindowState = WindowState.Minimized;
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
+       
 
         private void Deck_Click(object sender, RoutedEventArgs e)
         {
-            trash_stack_0.Children.Add(Deck_Org.takeCard());
-            trash_stack_1.Children.Add(Deck_Org.takeCard());
-            trash_stack_2.Children.Add(Deck_Org.takeCard());
+            trash_stack_0.Children.Add(Deck_Org.takeCard().canvas);
+            trash_stack_1.Children.Add(Deck_Org.takeCard().canvas);
+            trash_stack_2.Children.Add(Deck_Org.takeCard().canvas);
         }
 
-        private void Start_Click(object sender, RoutedEventArgs e)
-        {
-            Deck_Org.setUp();
-            slot_0.Children.Add(Deck_Org.takeCard());
-            slot_1.Children.Add(Deck_Org.takeCard());
-            slot_2.Children.Add(Deck_Org.takeCard());
-            slot_3.Children.Add(Deck_Org.takeCard());
-        }
+        
         private void Card_move(object sender, MouseEventArgs e)
         {
             if(e.LeftButton == MouseButtonState.Pressed)
             {
-                DragDrop.DoDragDrop(new Canvas(),new Canvas(), DragDropEffects.Move);
+                DragDrop.DoDragDrop(carta,carta, DragDropEffects.Move);
             }
         }
-        private void Card_drop(object sender, MouseEventArgs e)
+        private void Card_DragOver(object sender, DragEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragDrop.DoDragDrop(new Canvas(), new Canvas(), DragDropEffects.Move);
-            }
+            Point dropPosition = e.GetPosition(carta);
+
+
+            Canvas.SetLeft(carta, dropPosition.X);
+            Canvas.SetTop(carta, dropPosition.Y);
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            start.Visibility = Visibility.Collapsed;
         }
     }
 }
