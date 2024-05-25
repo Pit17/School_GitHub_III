@@ -19,6 +19,7 @@
     <None Remove="Fonts\Mexicana.ttf" />
     <None Remove="Fonts\MexicanaHollow.ttf" />
     <None Remove="Logo.png" />
+    <None Remove="manuelito_seduto.png" />
     <None Remove="paesaggio.png" />
     <None Remove="RETRO.jpg" />
     <None Remove="tacos.png" />
@@ -39,6 +40,7 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Resource>
     <Resource Include="Logo.png" />
+    <Resource Include="manuelito_seduto.png" />
     <Resource Include="paesaggio.png" />
     <Resource Include="RETRO.jpg" />
     <Resource Include="tacos.png" />

@@ -100,6 +100,9 @@
             </Grid.ColumnDefinitions>
 
 
+            <Image HorizontalAlignment="Left" Height="298" Margin="0,634,0,0" Grid.Row="1" VerticalAlignment="Top" Width="879" Source="/manuelito_seduto.png" Grid.ColumnSpan="4"/>
+
+
             <Button x:Name="btnMinimize"
                     Background="#9F8772"
                     BorderThickness="0"
@@ -111,7 +114,7 @@
                     Cursor="Hand"
                     Click="minimizeClick">
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
                         <Border Width="18" Height="18"
                                 CornerRadius="9"
                                 Background="{TemplateBinding Background}">
@@ -133,7 +136,7 @@
                     Cursor="Hand"
                     Click="CloseClick">
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
                         <Border Width="18" Height="18"
                                 CornerRadius="9"
                                 Background="{TemplateBinding Background}">
@@ -153,11 +156,11 @@
                     <ImageBrush ImageSource="/RETRO.jpg" Stretch="UniformToFill"/>
                 </Button.Background>
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
                         <Border Width="100" Height="170"
                                 CornerRadius="5"
                                 Background="{TemplateBinding Background}"
-                        ></Border>
+                        />
                     </ControlTemplate>
                 </Button.Template>
             </Button>
@@ -173,20 +176,20 @@
             </Grid>
             <Grid x:Name="slot_0" Grid.Row="1" Margin="128,530,486,166" Height="160" Width="108">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
                 </Border>
             </Grid>
             <Grid x:Name="slot_1" Grid.Row="1" Margin="283,521,340,161" Height="160">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5" Margin="0,-7,0,-7" Height="160">
 
-                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
 
                 </Border>
             </Grid>
             <Grid x:Name="slot_2" Grid.Row="1" Margin="434,521,189,161" Height="160">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
 
-                    <Canvas x:Name ="carta" AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas x:Name ="carta" AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
 
                 </Border>
             </Grid>
@@ -196,23 +199,23 @@
             <Grid x:Name="scala_0" Grid.Row="1" Margin="128,42,494,654" Height="160">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
 
-                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
 
                 </Border>
             </Grid>
             <Grid x:Name="scala_1" Grid.Row="1" Margin="283,30,340,642" Height="159">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
                 </Border>
             </Grid>
             <Grid x:Name="scala_2" Grid.Row="1" Margin="434,30,189,642" Height="160">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas  AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas  AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
                 </Border>
             </Grid>
             <Grid x:Name="scala_3" Grid.Row="1" Margin="583,30,40,642" Height="160">
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas  AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"></Canvas>
+                    <Canvas  AllowDrop="True" Background="Transparent" DragOver="Card_DragOver"/>
                 </Border>
             </Grid>
             <Canvas 
@@ -223,15 +226,31 @@
                 AllowDrop="True" 
                 Visibility="Hidden" 
                 />
+
             <Grid x:Name="Start" Grid.Row="1" Grid.ColumnSpan="4" Margin="10,5,0,0">
-                <Grid x:Name="start" Background="#FF597E52">
+                <Grid x:Name="start" Background="#FF597E52" Margin="-10,0,0,0">
                     <Image HorizontalAlignment="Center" Height="474" Margin="0,314,0,0" VerticalAlignment="Top" Width="474" Source="/contorno_bottone.png"/>
                     <Button Style="{DynamicResource ButtonStyle1}" Content="Button" HorizontalAlignment="Center" Margin="0,426,0,0" VerticalAlignment="Top" Height="142" Width="216" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.337,0.493" Click="Button_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="/tacos.png" Stretch="Fill"/>
                         </Button.Background>
                     </Button>
-                    <Label x:Name="Title" Content="       Solitario&#xA;      Manuelito" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" Height="197" Width="696" FontSize="100" FontFamily="{StaticResource Mexicana}" FontWeight="Regular" FontStyle="Normal" Foreground="#FF302D81"/>
+                    <Label x:Name="Title" Content="       Solitario&#xA;      Manuelito" HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" Height="198" Width="696" FontSize="100" FontFamily="{StaticResource Mexicana}" FontWeight="Regular" FontStyle="Normal" Background="{x:Null}">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFC41F26"/>
+                                <GradientStop Color="#FFFEE002" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+                    <Label Content="Prueba el taco para comenzar el juego." HorizontalAlignment="Center" Margin="0,739,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="{StaticResource Mexicana}">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFEE101"/>
+                                <GradientStop Color="Red" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
                 </Grid>
             </Grid>
 
