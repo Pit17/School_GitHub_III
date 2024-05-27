@@ -64,25 +64,35 @@ namespace Solitario_Manuelito
         
         private void Card_move(object sender, MouseEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            
+            Canvas source = (Canvas)e.Source;
+            source.Opacity = 1;
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
-                DragDrop.DoDragDrop(carta,carta, DragDropEffects.Move);
+                DragDrop.DoDragDrop(source,source, DragDropEffects.Move);
             }
         }
-        private void Card_DragOver(object sender, DragEventArgs e)
+        private void Card_DragOver(object sender, MouseEventArgs e)
         {
-            Point dropPosition = e.GetPosition(carta);
 
+            
+        }
 
-            Canvas.SetLeft(carta, dropPosition.X);
-            Canvas.SetTop(carta, dropPosition.Y);
+        private void Card_Drop(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(typeof(Canvas)))
+                return;
+
+            Canvas source = (Canvas)e.Data.GetData(typeof(Canvas));
+            Canvas target = (Canvas)e.Source;
+            target.Background = source.Background;
+
+            //remove opacity from source
+            source.Opacity = 1;
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            start.Visibility = Visibility.Collapsed;
-        }
+        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

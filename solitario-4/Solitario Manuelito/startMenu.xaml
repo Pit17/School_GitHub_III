@@ -1,0 +1,98 @@
+﻿<Window x:Class="Solitario_Manuelito.startMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Solitario_Manuelito"
+        mc:Ignorable="d"
+        Title="startMenu" Height="900" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" >
+    <Border CornerRadius="20"
+            
+            BorderThickness="7"
+            Background="#597E52"
+            BorderBrush="#665A48">
+
+
+        <Grid x:Name="start" Background="Transparent" Margin="21,7,21,-7">
+
+
+            <Button x:Name="btnMinimize"
+                    Background="#9F8772"
+                    BorderThickness="0"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="MontSerrat"
+                    Cursor="Hand"
+                    Click="minimizeClick" Margin="713,-5,11,861">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="18" Height="18"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnClose"
+                    Background="DeepPink"
+                    BorderThickness="0"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="12"
+                    FontFamily="MontSerrat"
+                    Cursor="Hand"
+                    Click="CloseClick" Margin="738,0,-13,866" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="18" Height="18"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+            <Image HorizontalAlignment="Center" Height="474" Margin="0,314,0,0" VerticalAlignment="Top" Width="474" Source="/contorno_bottone.png"/>
+            <Button Content="Button" HorizontalAlignment="Center" Margin="0,426,0,0" VerticalAlignment="Top" Height="142" Width="216" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.337,0.493" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/tacos.png" Stretch="Fill"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="Title" HorizontalAlignment="Left" Margin="48,77,0,0" VerticalAlignment="Top" Height="198" Width="696" FontSize="100" FontFamily="{StaticResource Mexicana}" FontWeight="Regular" FontStyle="Normal" Background="{x:Null}" Content="     Solitario&#xD;&#xA;    Manuelito">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC41F26"/>
+                        <GradientStop Color="#FFFEE002" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Prueba el taco para comenzar el juego." HorizontalAlignment="Center" Margin="0,739,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="{StaticResource Mexicana}">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFEE101"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+        </Grid>
+    </Border>
+</Window>
