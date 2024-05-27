@@ -226,6 +226,25 @@
                 AllowDrop="True" 
                 Visibility="Hidden" 
                 />
+            <Button x:Name="Rules" Content="Regole" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Click="Button_Click_1" FontFamily="{StaticResource Mexicana}" FontSize="20" Foreground="Black">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFAD404" Offset="1"/>
+                        <GradientStop Color="#FFCA3223" Offset="0.003"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="180" Height="20"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
             <Grid x:Name="Start" Grid.Row="1" Grid.ColumnSpan="4" Margin="10,5,0,0">
                 <Grid x:Name="start" Background="#FF597E52" Margin="-10,0,0,0">

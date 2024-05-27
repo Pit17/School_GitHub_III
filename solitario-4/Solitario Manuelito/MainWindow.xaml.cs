@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Media;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,11 +25,21 @@ namespace Solitario_Manuelito
         {
             InitializeComponent();
             Deck_Org.setUp();
+            string path;
+            //SoundPlayer player = new SoundPlayer(path);
+            //player.Load();
+            //player.Play();
             slot_0.Children.Add(Deck_Org.takeCard().canvas);
             slot_1.Children.Add(Deck_Org.takeCard().canvas);
             slot_2.Children.Add(Deck_Org.takeCard().canvas);
             slot_3.Children.Add(Deck_Org.takeCard().canvas);
-            
+            //bool soundFinished = true;
+
+            //if (soundFinished)
+            //{
+            //    soundFinished = false;
+            //    Task.Factory.StartNew(() => { player.PlaySync(); soundFinished = true; });
+            //}
         }
 
         private void CloseClick(object sender, RoutedEventArgs e)
@@ -70,6 +82,12 @@ namespace Solitario_Manuelito
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             start.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("Regole:\r\n- il tavolo è formato da 8 pile di carte\r\n- le 4 sopra si usano per le scale dello stesso seme in ordine crescente e le carte messe non si possono togliere\r\n- le 4 sotto a seme alternato e decrescenti sono ausiliarie e le carte si possono togliere e mettere a piacimento\r\n- si pescano 3 carte alla volta e si usano da destra verso sinistra; solo se si ha usato la carta    precedente si può usare quella a sinistra\r\n-  una volta finito il mazzo se le 4 pile sopra non sono complete si rimescola la pila degli scarti\r\n","REGOLE");
         }
     }
 }
