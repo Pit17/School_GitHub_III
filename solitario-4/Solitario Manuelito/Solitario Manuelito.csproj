@@ -24,6 +24,7 @@
     <None Remove="RETRO.jpg" />
     <None Remove="tacos.png" />
     <None Remove="tramonto.jpg" />
+    <None Remove="volume-high-solid.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,7 @@
     <Resource Include="RETRO.jpg" />
     <Resource Include="tacos.png" />
     <Resource Include="tramonto.jpg" />
+    <Resource Include="volume-high-solid.png" />
   </ItemGroup>
 
 </Project>

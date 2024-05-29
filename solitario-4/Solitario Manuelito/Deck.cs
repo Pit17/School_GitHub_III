@@ -22,6 +22,11 @@ namespace Solitario_Manuelito
         {
             Carta[,] matrice = new Carta[3, 4];
             this.canvas = new Canvas();
+            canvas.Margin = new Thickness(0, 0, 0, 0);
+            canvas.HorizontalAlignment = HorizontalAlignment.Center;
+            canvas.VerticalAlignment = VerticalAlignment.Center;
+
+
             canvas.Width = 100;
             canvas.Height = 150;
             this.Name = card.ToString();

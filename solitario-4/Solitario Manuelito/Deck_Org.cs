@@ -16,7 +16,7 @@ namespace Solitario_Manuelito
         Random rng = new Random();
         public string[] card_deck = new string[40];
         public bool[] card_deck_bool = new bool[40];
-        List<Carta> mazzo = new List<Carta>();
+        public List<Carta> mazzo = new List<Carta>();
 
         public Deck_Org()
         {
@@ -60,8 +60,22 @@ namespace Solitario_Manuelito
             }
         }
 
+        public void mescola(List<List<Carta>> scarti)
+        {
+            foreach(var l in scarti)
+            {
+                foreach (var c in l)
+                {
+                    mazzo.Add(c);
+                }
+            } 
+            scarti.Clear();
+            Shuffle();
+        }
+
         public Carta Pesca()
         {
+            
             Carta c = mazzo[mazzo.Count - 1];
             mazzo.RemoveAt(mazzo.Count-1);
             return c;

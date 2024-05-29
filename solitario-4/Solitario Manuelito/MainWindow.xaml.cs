@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Media;
 using System.Text;
@@ -26,10 +27,10 @@ namespace Solitario_Manuelito
         List<List<Carta>> scarti = new List<List<Carta>>();
         List<Carta>[] mazzetto = new List<Carta>[4];
         Deck_Org mazzo = new Deck_Org();
-
-        Carta? tenuta = null; 
-        
-
+        bool audio = true;
+        Carta? tenuta = null;
+        List<Carta> ListaTenuta; 
+        SoundPlayer player = new SoundPlayer(@$"..\..\..\Music\Cucaracha.wav");
         public MainWindow()
         {
             InitializeComponent();
@@ -40,11 +41,122 @@ namespace Solitario_Manuelito
                 { mazzo.Pesca() };
                 mazzetto[i][0].position = i + 7;
             }
-
-            string path = @$"..\..\..\Music\musica.wav";
-            SoundPlayer player = new SoundPlayer(path);
             player.Load();
             player.PlayLooping();
+            refresh();
+            Canvas belen = new Canvas();
+            belen.Height = 160;
+            belen.Width = 108;
+            belen.Background = Brushes.Transparent;
+            scala_0.Children.Insert(2, belen);
+            Canvas barbarita = new Canvas();
+            barbarita.Height = 160;
+            barbarita.Width = 108;
+            barbarita.Background = Brushes.Transparent;
+            scala_1.Children.Insert(2, barbarita);
+            Canvas esmeralda = new Canvas();
+            esmeralda.Height = 160;
+            esmeralda.Width = 108;
+            esmeralda.Background = Brushes.Transparent;
+            scala_2.Children.Insert(2, esmeralda);
+            Canvas florencia = new Canvas();
+            florencia.Height = 160;
+            florencia.Width = 108;
+            florencia.Background = Brushes.Transparent;
+            scala_3.Children.Insert(2, florencia);
+        }
+        
+        private void refresh()
+        {
+            
+            
+            if (slot_0.Children.Count > 2) slot_0.Children.RemoveAt(2);
+            if (slot_1.Children.Count > 2) slot_1.Children.RemoveAt(2);
+            if (slot_2.Children.Count > 2) slot_2.Children.RemoveAt(2);
+            if (slot_3.Children.Count > 2) slot_3.Children.RemoveAt(2);
+
+            if(trash_stack_0.Children.Count > 2) trash_stack_0.Children.RemoveAt(2);
+            if (trash_stack_1.Children.Count > 2) trash_stack_1.Children.RemoveAt(2);
+            if (trash_stack_2.Children.Count > 2) trash_stack_2.Children.RemoveAt(2);
+
+            if (scala[0] != null && scala_0.Children.Count > 2) scala_0.Children.RemoveAt(2);
+            if (scala[1] != null && scala_1.Children.Count > 2) scala_1.Children.RemoveAt(2);
+            if (scala[2] != null && scala_2.Children.Count > 2) scala_2.Children.RemoveAt(2);
+            if (scala[3] != null && scala_3.Children.Count > 2) scala_3.Children.RemoveAt(2);
+
+
+            if (mazzetto[0].Count > 0)
+            {
+                slot_0.Children.Insert(2,mazzetto[0][mazzetto[0].Count - 1].canvas);
+            }
+            else
+            {
+                Canvas manuelito = new Canvas();
+                manuelito.Height = 160;
+                manuelito.Width = 108;
+                manuelito.Background = Brushes.Transparent;
+                slot_0.Children.Insert(2,manuelito);
+
+            }
+            if (mazzetto[1].Count > 0)
+            {
+                slot_1.Children.Insert(2, mazzetto[1][mazzetto[1].Count - 1].canvas);
+            }
+            else
+            {
+                Canvas rodrigo = new Canvas();
+                rodrigo.Height = 160;
+                rodrigo.Width = 108;
+                rodrigo.Background = Brushes.Transparent;
+                slot_1.Children.Insert(2, rodrigo);
+            }
+            if (mazzetto[2].Count > 0)
+            {
+                
+                slot_2.Children.Insert(2, mazzetto[2][mazzetto[2].Count - 1].canvas);
+            }
+            else
+            {
+                Canvas alvaro = new Canvas();
+                alvaro.Height = 160;
+                alvaro.Width = 108;
+                alvaro.Background = Brushes.Transparent;
+                slot_2.Children.Insert(2, alvaro);
+            }
+            if (mazzetto[3].Count > 0)
+            {
+                slot_3.Children.Insert(2, mazzetto[3][mazzetto[3].Count - 1].canvas);
+            }
+            else
+            {
+                Canvas camilo = new Canvas();
+                camilo.Height = 160;
+                camilo.Width = 108;
+                camilo.Background = Brushes.Transparent;
+                slot_3.Children.Insert(2, camilo);
+            }
+            if (scarti.Count > 0)
+            {
+                if (scarti[scarti.Count - 1].Count > 0)                
+                {
+                    trash_stack_0.Children.Insert(2, scarti[scarti.Count - 1][0].canvas);
+                }
+                if (scarti[scarti.Count - 1].Count > 1)
+                {
+                    trash_stack_1.Children.Insert(2, scarti[scarti.Count - 1][1].canvas);
+
+                }
+                if (scarti[scarti.Count - 1].Count > 2)
+                {
+                    trash_stack_2.Children.Insert(2,scarti[scarti.Count - 1][2].canvas);
+                }
+            }
+            if (scala[0] != null) scala_0.Children.Insert(2,scala[0].canvas);
+            if (scala[1] != null) scala_1.Children.Insert(2, scala[1].canvas);
+            if (scala[2] != null) scala_2.Children.Insert(2,scala[2].canvas);
+            if (scala[3] != null) scala_3.Children.Insert(2, scala[3].canvas);
+
+           
 
         }
 
@@ -63,47 +175,89 @@ namespace Solitario_Manuelito
         private void Deck_Click(object sender, RoutedEventArgs e)
         {
             scarti.Add(new List<Carta>());
-            for(int i = 0; i < 3; i++)
+            if (mazzo.mazzo.Count == 0)
             {
+                mazzo.mescola(scarti);
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                if (mazzo.mazzo.Count == 0)
+                {
+                    break;
+                }
                 scarti[scarti.Count-1].Add(mazzo.Pesca());
                 scarti[scarti.Count - 1][i].position = i + 4;
             }
+            refresh();
         }
+        private void Card_pick(object sender, RoutedEventArgs e)
+        {
 
+        }
         
         private void Card_move(object sender, MouseEventArgs e)
         {
             Canvas source = (Canvas)e.Source;
-            source.Opacity = 1;
+            
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                
+                var g = VisualTreeHelper.GetParent((Canvas)sender) as Grid;
+                for (int i = 0;i < 4;i++)
+                {
+                    if (g.Name == $"slot_{i}")
+                    {
+                        tenuta = mazzetto[i][mazzetto[i].Count-1];
+                        ListaTenuta = mazzetto[i];
+                    } 
+                    
+                }
+                for (int i = 0;i < 3; i++)
+                {
+                    if (g.Name == $"trash_stack_{i}")
+                    {
+                        tenuta = scarti[scarti.Count - 1][i];
+                        ListaTenuta = scarti[scarti.Count-1];
+                    }
+                }
                 DragDrop.DoDragDrop(source,source, DragDropEffects.Move);
             }
+        }
+        
+
+        private void Card_Drop(object sender, DragEventArgs e)
+        {
+            //var npick = Convert.ToInt32(((Button)sender).Tag);
+            if (!e.Data.GetDataPresent(typeof(Canvas)))
+                return;
+
+            
+            var g = VisualTreeHelper.GetParent((Canvas)sender) as Grid;
+            for (int i = 0; i < 4; i++)
+            {
+                if (g.Name == $"slot_{i}")
+                {
+                    mazzetto[i].Add(tenuta);
+                    
+                }
+                if (g.Name == $"scala_{i}")
+                {
+                    g.Children.RemoveAt(2);
+                    scala[i] = tenuta;
+                }
+                
+            }    
+            ListaTenuta.Remove(tenuta);
+            refresh();
+           
+            
+
         }
         private void Card_DragOver(object sender, MouseEventArgs e)
         {
 
-            
-        }
-
-        private void Card_Drop(object sender, DragEventArgs e)
-        {
-            var npick = Convert.ToInt32(((Button)sender).Tag);
-            MessageBox.Show(npick + "");
-            if (!e.Data.GetDataPresent(typeof(Canvas)))
-                return;
-
-            Canvas source = (Canvas)e.Data.GetData(typeof(Canvas));
-            Canvas target = (Canvas)e.Source;
-            target.Background = source.Background;
-
-            //remove opacity from source
-            source.Opacity = 1;
 
         }
 
-        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -111,23 +265,31 @@ namespace Solitario_Manuelito
             MessageBox.Show("Scopo del solitario è costruire e completare le basi poste al di sopra del tallone, scorrendolo di tre carte in tre carte, di cui solo la prima è utilizzabile. Se questa viene spostata, la sottostante verrà liberata e diventerà anch’essa utilizzabile.\r\nAl di sotto del tallone, invece, sono presenti quattro sequenze da utilizzare come ausilio per la riuscita del solitario.\r\nPer le basi vale la regola dello stesso seme in senso ascendente, mentre nelle sequenze vale quella del seme diverso in senso discendente.\r\nLe carte in cima alle sequenze, così come le carte del pozzo, possono essere posizionate sulle basi e/o sulle sequenze, mentre il numero di distribuzioni è pari a 3.\r\nPuò essere spostata solo una carta alla volta ", "REGOLE");
         }
 
-        private void Card_pick(object sender, RoutedEventArgs e)
-        {
-           var npick = Convert.ToInt32(((Button)sender).Tag);
-            //MessageBox.Show(npick + "");
+        
 
-            if(npick < 4)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (audio)
             {
-                //basi
-            }
-            else if(npick < 7)
-            {
-                //scarti
+                audio = false;
+                btn.Background = new ImageBrush(new BitmapImage(new Uri(@$"..\..\..\MARTINA-GRAFFIETI-CARTE-ITT-anonimo\muto.png", UriKind.Relative))) ;
+                player.Stop();
+                
             }
             else
             {
-                //mazzetti
+                audio = true;
+                btn.Background = new ImageBrush(new BitmapImage(new Uri(@$"..\..\..\MARTINA-GRAFFIETI-CARTE-ITT-anonimo\volume.png", UriKind.Relative)));
+                player.PlayLooping();
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            refresh();
+        }
+
+
     }
 }
