@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,10 @@ namespace Solitario_Manuelito
         public startMenu()
         {
             InitializeComponent();
+            string path = @$"..\..\..\Music\musica.wav";
+            SoundPlayer player = new SoundPlayer(path);
+            player.Load();
+            player.PlayLooping();
         }
         
         private void CloseClick(object sender, RoutedEventArgs e)
@@ -36,6 +41,8 @@ namespace Solitario_Manuelito
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow game = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            game.Show();
         }
     }
 }

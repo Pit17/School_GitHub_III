@@ -32,16 +32,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="Transparent"/>
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -60,8 +60,14 @@
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
-
-
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
@@ -76,6 +82,9 @@
 
 
     </Window.Resources>
+
+
+
     <!--#endregion-->
 
     <Border CornerRadius="20"
@@ -128,7 +137,7 @@
                     Background="DeepPink"
                     BorderThickness="0"
                     Grid.Column="2"
-                    Content="X"
+                    Content="×"
                     Foreground="White"
                     FontSize="12"
                     FontFamily="MontSerrat"
@@ -163,63 +172,85 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
-            
+
+
             <Grid x:Name="trash_stack_0" Grid.Row="1" Margin="283,274,340,411" Height="160" >
+
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="4" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+
             </Grid>
 
             <Grid x:Name="trash_stack_1" Grid.Row="1" Margin="434,274,189,411" Width="108" Height="160">
-                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="5" Click="Card_pick" />
+                <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5" Panel.ZIndex="1"/>
             </Grid>
             <Grid x:Name="trash_stack_2" Grid.Row="1" Margin="583,274,40,411" Width="108" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="6" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
             </Grid>
             <Grid x:Name="slot_0" Grid.Row="1" Margin="128,530,486,166" Height="160" Width="108">
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="7" Click="Card_pick"/>
+
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                   
                 </Border>
+
             </Grid>
             <Grid x:Name="slot_1" Grid.Row="1" Margin="283,521,340,161" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="8" Click="Card_pick" />
+
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5" Margin="0,-7,0,-7" Height="160">
 
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                    
 
                 </Border>
             </Grid>
             <Grid x:Name="slot_2" Grid.Row="1" Margin="434,521,189,161" Height="160">
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="9" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
 
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                   
 
                 </Border>
             </Grid>
             <Grid x:Name="slot_3" Grid.Row="1" Margin="583,521,40,161" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="10" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5"/>
             </Grid>
             <Grid x:Name="scala_0" Grid.Row="1" Margin="128,42,494,654" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="0" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-
-                    <Canvas AllowDrop="True" Background="Transparent" />
 
                 </Border>
             </Grid>
             <Grid x:Name="scala_1" Grid.Row="1" Margin="283,30,340,642" Height="159">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="1" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                    
                 </Border>
             </Grid>
             <Grid x:Name="scala_2" Grid.Row="1" Margin="434,30,189,642" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="2" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                    
                 </Border>
             </Grid>
             <Grid x:Name="scala_3" Grid.Row="1" Margin="583,30,40,642" Height="160">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Height="160" Width="108" Background="Transparent" Tag="3" Click="Card_pick" />
                 <Border CornerRadius="5"  BorderBrush="White" BorderThickness="5">
-                    <Canvas AllowDrop="True" Background="Transparent" />
+                   
                 </Border>
             </Grid>
-            
+            <Canvas 
+                x:Name="cartaa" 
+                Grid.Row="1" 
+                Margin="0,758,660,0"
+                Background="White"
+                AllowDrop="True" 
+                Visibility="Hidden" 
+                />
+
             <Button x:Name="Rules" Content="Regole" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Click="Button_Click_1" FontFamily="{StaticResource Mexicana}" FontSize="20" Foreground="Black">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

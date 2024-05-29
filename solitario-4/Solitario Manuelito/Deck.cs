@@ -16,6 +16,7 @@ namespace Solitario_Manuelito
         public string Seme = "";
         public int Valore = 0;
         public Canvas canvas;
+        public int position;
 
         public Carta(string card)
         {
@@ -103,39 +104,6 @@ namespace Solitario_Manuelito
                 valore = 1;
             }
             return valore;
-        }
-        public void RiempiMatrice(Carta [,] matrice)
-        {
-            for (int i = 0;i < matrice.GetLength(0);i++)
-            {
-                for (int j = 0;j < matrice.GetLength(1); j++)
-                {
-                    if (i == 0)//scala
-                    {
-                        //matrice[i, j] = ;
-                    }
-                    else if (i == 1 && j == 0)//mazzo
-                    {
-                        //matrice[i, j] = ;
-                    }
-                    else if(i == 1 && j == 1)//trash_stack_1
-                    {
-                        //matrice[i, j] = ;
-                    }
-                    else if(i == 1 && j == 2)//trash_stack_2
-                    {
-                        //matrice[i, j] = ;
-                    }
-                    else if(i == 1 && j == 3)//trash_stack_3
-                    {
-                        //matrice[i, j] = ;
-                    }
-                    else if (i == 2)//slot inferiori
-                    {
-                        //matrice[i, j] = ;
-                    }
-                }
-            }
         }
     }
 }

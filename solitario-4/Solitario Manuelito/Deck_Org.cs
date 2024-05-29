@@ -7,63 +7,63 @@ using System.Windows.Media.Imaging;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace Solitario_Manuelito
 {
     internal class Deck_Org
     {
-        
+        Random rng = new Random();
         public string[] card_deck = new string[40];
         public bool[] card_deck_bool = new bool[40];
+        List<Carta> mazzo = new List<Carta>();
 
-        public void setUp()
+        public Deck_Org()
         {
             for (int i = 1; i <= 10; i++)
             {
                 card_deck[i - 1] = $"{i}A";
+                mazzo.Add(new Carta($"{i}A"));
             }
             for (int i = 1; i <= 10; i++)
             {
                 card_deck[i + 9] = $"{i}B";
+                mazzo.Add(new Carta($"{i}B"));
             }
             for (int i = 1; i <= 10; i++)
             {
                 card_deck[i + 19] = $"{i}C";
+                mazzo.Add(new Carta($"{i}C"));
             }
             for (int i = 1; i <= 10; i++)
             {
                 card_deck[i + 29] = $"{i}D";
+                mazzo.Add(new Carta($"{i}D"));
             }
             for (int i = 1; i < card_deck_bool.Length; i++)
             {
                 card_deck_bool[i] = true;
             }
+            Shuffle();
         }
-        public int shuffle()
+
+        public void Shuffle()
         {
-            Random rnd = new Random();
-            int r = rnd.Next(0, card_deck.Length);
-            if (card_deck_bool[r] == true)
+            int n = mazzo.Count;
+            while (n > 1)
             {
-                card_deck_bool[r] = false;
-                return r;
+                n--;
+                int k = rng.Next(n + 1);
+                Carta value = mazzo[k];
+                mazzo[k] = mazzo[n];
+                mazzo[n] = value;
             }
-            else
-            {
-                if (!(card_deck_bool.Contains(true)))
-                {
-                    return -1;
-                }
-
-                return shuffle();
-            }
-
         }
-        public Carta takeCard()
+
+        public Carta Pesca()
         {
-            int r1 = shuffle();
-            Carta c = new Carta(card_deck[r1]);
-            if (c.canvas == null) MessageBox.Show("huh?");
+            Carta c = mazzo[mazzo.Count - 1];
+            mazzo.RemoveAt(mazzo.Count-1);
             return c;
         }
     }
