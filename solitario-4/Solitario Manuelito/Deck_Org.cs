@@ -70,6 +70,7 @@ namespace Solitario_Manuelito
                 }
             } 
             scarti.Clear();
+            
             Shuffle();
         }
 

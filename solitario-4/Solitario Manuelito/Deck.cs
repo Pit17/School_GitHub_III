@@ -35,7 +35,7 @@ namespace Solitario_Manuelito
             AssegnaValore();
         }
 
-        public string AssegnaSeme()
+        public void AssegnaSeme()
         {
             //Tastiere,A
             //Mouse,B
@@ -61,10 +61,10 @@ namespace Solitario_Manuelito
                 seme = "Cuffie";
             }
 
-            return seme;
+            this.Seme = seme;
         }
 
-        public int AssegnaValore()
+        public void AssegnaValore()
         {
             
             int valore=0;
@@ -108,7 +108,7 @@ namespace Solitario_Manuelito
             {
                 valore = 1;
             }
-            return valore;
+            this.Valore = valore;
         }
     }
 }
