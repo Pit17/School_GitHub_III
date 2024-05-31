@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.Windows.Threading;
+using System.Reflection.Metadata;
 
 namespace Solitario_Manuelito
 {
@@ -31,8 +34,15 @@ namespace Solitario_Manuelito
         Carta? tenuta = null;
         List<Carta> ListaTenuta; 
         SoundPlayer player = new SoundPlayer(@$"..\..\..\Music\Cucaracha.wav");
+        DispatcherTimer timer = new DispatcherTimer();
+        int secondi = 0;
         public MainWindow()
         {
+            
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += UpdateTimer;
+            timer.Start();
             InitializeComponent();
             Mescola.Visibility = Visibility.Hidden;
             Mescolate_rimanenti_label.Visibility = Visibility.Hidden;
@@ -68,6 +78,11 @@ namespace Solitario_Manuelito
             scala_3.Children.Insert(2, florencia);
         }
         
+        private void UpdateTimer(object sender, EventArgs e)
+        {
+            secondi++;
+            tempo.Content = secondi.ToString();
+        }
         private void refresh()
         {
             if(scarti.Count != 0 && scarti[scarti.Count-1].Count == 0)
@@ -267,6 +282,12 @@ namespace Solitario_Manuelito
                         if (CheckWin())
                         {
                             MessageBox.Show("COMPLIMENTI! HAI VINTO!");
+                            timer.Stop();
+                            
+                            Deck.Visibility = Visibility.Hidden;
+                            Mescola.Visibility = Visibility.Hidden;
+                            mescolate_rimanenti_int.Visibility = Visibility.Hidden;
+                            Mescolate_rimanenti_label.Visibility = Visibility.Hidden;
                         }
                     }
                     
