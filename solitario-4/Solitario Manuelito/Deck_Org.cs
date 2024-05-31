@@ -18,7 +18,7 @@ namespace Solitario_Manuelito
         public bool[] card_deck_bool = new bool[40];
         public List<Carta> mazzo = new List<Carta>();
 
-        public Deck_Org()
+        public Deck_Org()//crea carte seguendo il nome delle immagini carte
         {
             for (int i = 1; i <= 10; i++)
             {
@@ -47,7 +47,7 @@ namespace Solitario_Manuelito
             Shuffle();
         }
 
-        public void Shuffle()
+        public void Shuffle()//mescola il mazzo iniziale
         {
             int n = mazzo.Count;
             while (n > 1)
@@ -60,7 +60,7 @@ namespace Solitario_Manuelito
             }
         }
 
-        public void mescola(List<List<Carta>> scarti)
+        public void mescola(List<List<Carta>> scarti)//mescola pila scarti
         {
             foreach(var l in scarti)
             {
@@ -74,7 +74,7 @@ namespace Solitario_Manuelito
             Shuffle();
         }
 
-        public Carta Pesca()
+        public Carta Pesca()//pesca una carta
         {
             
             Carta c = mazzo[mazzo.Count - 1];

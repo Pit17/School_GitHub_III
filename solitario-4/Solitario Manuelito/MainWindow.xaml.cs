@@ -47,7 +47,7 @@ namespace Solitario_Manuelito
             Mescola.Visibility = Visibility.Hidden;
             Mescolate_rimanenti_label.Visibility = Visibility.Hidden;
             mescolate_rimanenti_int.Visibility = Visibility.Hidden;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)//pesca le prime 4 carte dei 4 slot inferiori
             {
                 mazzetto[i] = new List<Carta>
                 { mazzo.Pesca() };
@@ -56,6 +56,7 @@ namespace Solitario_Manuelito
             player.Load();
             player.PlayLooping();
             refresh();
+            #region canvas iniziali
             Canvas belen = new Canvas();
             belen.Height = 160;
             belen.Width = 108;
@@ -76,36 +77,40 @@ namespace Solitario_Manuelito
             florencia.Width = 108;
             florencia.Background = Brushes.Transparent;
             scala_3.Children.Insert(2, florencia);
+            #endregion
         }
-        
-        private void UpdateTimer(object sender, EventArgs e)
+
+        private void UpdateTimer(object sender, EventArgs e)//timer
         {
             secondi++;
             tempo.Content = secondi.ToString();
         }
-        private void refresh()
+        private void refresh()//ridisegna cvarte ogni azione fatta
         {
+
             if(scarti.Count != 0 && scarti[scarti.Count-1].Count == 0)
             {
                 scarti.RemoveAt(scarti.Count-1);
             }
-            
+            #region slot
             if (slot_0.Children.Count > 2) slot_0.Children.RemoveAt(2);
             if (slot_1.Children.Count > 2) slot_1.Children.RemoveAt(2);
             if (slot_2.Children.Count > 2) slot_2.Children.RemoveAt(2);
             if (slot_3.Children.Count > 2) slot_3.Children.RemoveAt(2);
-
-            if(trash_stack_0.Children.Count > 2) trash_stack_0.Children.RemoveAt(2);
+            #endregion
+            #region scarti
+            if (trash_stack_0.Children.Count > 2) trash_stack_0.Children.RemoveAt(2);
             if (trash_stack_1.Children.Count > 2) trash_stack_1.Children.RemoveAt(2);
             if (trash_stack_2.Children.Count > 2) trash_stack_2.Children.RemoveAt(2);
-
+            #endregion
+            #region scale
             if (scala[0] != null && scala_0.Children.Count > 2) scala_0.Children.RemoveAt(2);
             if (scala[1] != null && scala_1.Children.Count > 2) scala_1.Children.RemoveAt(2);
             if (scala[2] != null && scala_2.Children.Count > 2) scala_2.Children.RemoveAt(2);
             if (scala[3] != null && scala_3.Children.Count > 2) scala_3.Children.RemoveAt(2);
+            #endregion
 
-
-            if (mazzetto[0].Count > 0)
+            if (mazzetto[0].Count > 0)//disegna mazzetto 0
             {
                 slot_0.Children.Insert(2,mazzetto[0][mazzetto[0].Count - 1].canvas);
             }
@@ -118,7 +123,7 @@ namespace Solitario_Manuelito
                 slot_0.Children.Insert(2,manuelito);
 
             }
-            if (mazzetto[1].Count > 0)
+            if (mazzetto[1].Count > 0)//disegna mazzetto 1
             {
                 slot_1.Children.Insert(2, mazzetto[1][mazzetto[1].Count - 1].canvas);
             }
@@ -130,7 +135,7 @@ namespace Solitario_Manuelito
                 rodrigo.Background = Brushes.Transparent;
                 slot_1.Children.Insert(2, rodrigo);
             }
-            if (mazzetto[2].Count > 0)
+            if (mazzetto[2].Count > 0)//disegna mazzetto 2
             {
                 
                 slot_2.Children.Insert(2, mazzetto[2][mazzetto[2].Count - 1].canvas);
@@ -143,7 +148,7 @@ namespace Solitario_Manuelito
                 alvaro.Background = Brushes.Transparent;
                 slot_2.Children.Insert(2, alvaro);
             }
-            if (mazzetto[3].Count > 0)
+            if (mazzetto[3].Count > 0)//disegna mazzetto 3
             {
                 slot_3.Children.Insert(2, mazzetto[3][mazzetto[3].Count - 1].canvas);
             }
@@ -155,7 +160,7 @@ namespace Solitario_Manuelito
                 camilo.Background = Brushes.Transparent;
                 slot_3.Children.Insert(2, camilo);
             }
-            if (scarti.Count > 0)
+            if (scarti.Count > 0)//disegna scarti
             {
                 if (scarti[scarti.Count - 1].Count > 0)                
                 {
@@ -174,6 +179,7 @@ namespace Solitario_Manuelito
                     border0.Visibility = Visibility.Visible;
                 }else border0.Visibility = Visibility.Hidden;
             }
+            //disegna scale
             if (scala[0] != null) scala_0.Children.Insert(2,scala[0].canvas);
             if (scala[1] != null) scala_1.Children.Insert(2, scala[1].canvas);
             if (scala[2] != null) scala_2.Children.Insert(2,scala[2].canvas);
@@ -183,12 +189,12 @@ namespace Solitario_Manuelito
 
         }
 
-        private void CloseClick(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)//chiudi app
         {
             Application.Current.Shutdown();
         }
 
-        private void minimizeClick(object sender, RoutedEventArgs e)
+        private void minimizeClick(object sender, RoutedEventArgs e)//abbassa app
         {
             WindowState = WindowState.Minimized;
         }
@@ -198,14 +204,14 @@ namespace Solitario_Manuelito
         private void Deck_Click(object sender, RoutedEventArgs e)
         {
             scarti.Add(new List<Carta>());
-            if (mazzo.mazzo.Count == 0)
+            if (mazzo.mazzo.Count == 0)//rimescola
             {
                 mescolate_rimanenti_int.Content = mescolate.ToString();
                 Mescolate_rimanenti_label.Visibility = Visibility.Visible;
                 Mescola.Visibility = Visibility.Visible;
                 mescolate_rimanenti_int.Visibility = Visibility.Visible;
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)//pesca 3 carte
             {
                 if (mazzo.mazzo.Count == 0)
                 {
@@ -222,7 +228,7 @@ namespace Solitario_Manuelito
 
         }
         
-        private void Card_move(object sender, MouseEventArgs e)
+        private void Card_move(object sender, MouseEventArgs e)//movimento carta
         {
             Canvas source = (Canvas)e.Source;
             
@@ -254,7 +260,7 @@ namespace Solitario_Manuelito
         }
         
 
-        private void Card_Drop(object sender, DragEventArgs e)
+        private void Card_Drop(object sender, DragEventArgs e)//rilascio carte
         {
             
             if (!e.Data.GetDataPresent(typeof(Canvas)))
@@ -307,7 +313,7 @@ namespace Solitario_Manuelito
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)//regole
         {
             
             MessageBox.Show("Scopo del solitario è costruire e completare le basi poste al di sopra del tallone, scorrendolo di tre carte in tre carte, di cui solo la prima è utilizzabile. Se questa viene spostata, la sottostante verrà liberata e diventerà anch’essa utilizzabile.\r\nAl di sotto del tallone, invece, sono presenti quattro sequenze da utilizzare come ausilio per la riuscita del solitario.\r\nPer le basi vale la regola dello stesso seme in senso ascendente, mentre nelle sequenze vale quella del seme diverso in senso discendente.\r\nLe carte in cima alle sequenze, così come le carte del pozzo, possono essere posizionate sulle basi e/o sulle sequenze, mentre il numero di distribuzioni è pari a 3.\r\nPuò essere spostata solo una carta alla volta ", "REGOLE");
@@ -315,7 +321,7 @@ namespace Solitario_Manuelito
 
         
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)//attiva o disattiva audio
         {
             Button btn = (Button)sender;
             if (audio)
@@ -333,7 +339,7 @@ namespace Solitario_Manuelito
             }
         }
 
-        private bool CheckMossaMazzetti(int mazzettoScelto)
+        private bool CheckMossaMazzetti(int mazzettoScelto)//verifica mossa mazzetti
         {
             
             if (mazzetto[mazzettoScelto].Count == 0) return true;
@@ -341,7 +347,7 @@ namespace Solitario_Manuelito
             else return false;  
         }
 
-        private bool CheckMossaScala(int scalaScelta)
+        private bool CheckMossaScala(int scalaScelta)//verifica mossa scala
         {
             if (scala[scalaScelta] == null)
             {
@@ -355,7 +361,7 @@ namespace Solitario_Manuelito
         }
 
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)//rimescola
         {
             if (mescolate > 0)
             {
@@ -369,7 +375,7 @@ namespace Solitario_Manuelito
             }
             
         }
-        private bool CheckWin()
+        private bool CheckWin()//verifica vittoria
         {
             int win = 0;
             foreach(var c in scala)
